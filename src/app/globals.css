@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f5f1e8;
+  --ink: #1a2541;
+  --accent: #8b2e1e;
+  --muted: #6b6456;
+  --soft: #ede6d3;
+  --border: #d4cab5;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-feature-settings: "liga", "kern";
+  text-rendering: optimizeLegibility;
+}
+
+/* Editorial paper texture, subtle noise overlay */
+.paper-grain {
+  position: relative;
+}
+.paper-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>");
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+}
+
+/* Reveal animation */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: reveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Editorial drop-cap for prose */
+.drop-cap::first-letter {
+  float: left;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 5.5em;
+  line-height: 0.85;
+  padding-right: 0.1em;
+  padding-top: 0.08em;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* Rule divider, editorial style */
+.rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted);
+}
+.rule::before.rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Refined link underlines */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
+.selection-accent ::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
