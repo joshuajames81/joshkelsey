@@ -6,21 +6,25 @@ export default function ChapterHeader({
   chapterNumber,
   title,
   intro,
+  parentHref = "/dinner-parties",
+  parentLabel = "Dinner Parties",
 }: {
   partNumber: string;
   partName: string;
   chapterNumber: string;
   title: string;
   intro: string;
+  parentHref?: string;
+  parentLabel?: string;
 }) {
   return (
     <header className="mb-14 md:mb-20 max-w-3xl">
       <div className="flex items-center gap-3 mb-6">
         <Link
-          href="/dinner-parties"
+          href={parentHref}
           className="uppercase text-[11px] tracking-[0.22em] text-accent font-sans hover:underline"
         >
-          Dinner Parties
+          {parentLabel}
         </Link>
         <span className="text-muted font-sans text-xs" aria-hidden>
           /
