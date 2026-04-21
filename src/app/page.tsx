@@ -26,7 +26,7 @@ export default function HomePage() {
                     FOUNT Church
                   </a>{" "}
                   in New York City, planted in 2013 with my wife and co-pastor{" "}
-                  <a href="https://georgiekelsey.com" className="link-underline text-accent">
+                  <a href="https://fount.nyc" className="link-underline text-accent">
                     Georgie Kelsey
                   </a>
                   . Teaching and writing on the gospel, the city, and a life shaped by Jesus,
@@ -64,7 +64,7 @@ export default function HomePage() {
                 finished. It may never be.
               </p>
               <p className="mt-6">
-                The name of our church came through a vision God gave Georgie from the hymn{" "}
+                God gave Georgie and I our church&rsquo;s name through the hymn{" "}
                 <em>Come Thou Fount of Every Blessing</em>. Our conviction is this.{" "}
                 <strong className="font-semibold">Jesus is the Fount.</strong>{" "}
                 And out of Him, the church becomes a fount to the city. Every song, every sermon,
@@ -124,19 +124,24 @@ export default function HomePage() {
             </div>
             <div className="md:col-span-7 font-serif text-lg leading-relaxed text-paper/90">
               <p>
-                FOUNT Church was planted in New York City in 2013 by Pastors Josh Kelsey and Georgie
-                Kelsey. The name came through a vision God gave Georgie from the beloved hymn{" "}
-                <em>Come Thou Fount of Every Blessing</em>.
+                FOUNT Church is a Dinner Party movement in New York City, planted in 2013 by
+                Josh Kelsey and Georgie Kelsey, with church plants now in Paris and Berlin.
+                A decade of ministry, five locations across the boroughs, and thousands of meals
+                shared around tables.
               </p>
               <p className="mt-5">
-                Jesus is the Fount. And out of Him, the church becomes a fount. Every life an
-                overflow, every church a river, every city a place where He can be tasted and
-                seen. That&rsquo;s the call. Every song, every sermon, every Dinner Party, every
-                gathering at FOUNT exists for that one thing. That He would be known, and that
-                out of Him, rivers of living water would flow to the city.
+                We&rsquo;ve built two resources here for leaders. A{" "}
+                <Link href="/dinner-parties" className="underline hover:text-accent transition-colors">
+                  Dinner Party playbook
+                </Link>{" "}
+                for anyone wanting to gather their city around a table, and a{" "}
+                <Link href="/church-planting" className="underline hover:text-accent transition-colors">
+                  Church Planting course
+                </Link>{" "}
+                for pastors building something from the ground up. Come sit down. Come learn how.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
+                
                   href="https://fount.nyc"
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-paper text-ink rounded-full hover:bg-accent hover:text-paper transition-colors text-sm font-sans"
                 >
