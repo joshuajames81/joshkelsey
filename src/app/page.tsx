@@ -141,7 +141,7 @@ export default function HomePage() {
                 for pastors building something from the ground up. Come sit down. Come learn how.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                
+                <a
                   href="https://fount.nyc"
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-paper text-ink rounded-full hover:bg-accent hover:text-paper transition-colors text-sm font-sans"
                 >
