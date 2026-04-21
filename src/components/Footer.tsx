@@ -16,7 +16,7 @@ export default function Footer() {
     },
     url: "https://joshkelsey.org",
     sameAs: [
-      "https://joshkelsey.substack.com",
+      "https://joshuakelsey.substack.com",
       "https://medium.com/@joshkelsey",
       "https://www.linkedin.com/in/josh--kelsey/",
       "https://x.com/J_kelsey",
@@ -47,7 +47,7 @@ export default function Footer() {
           </p>
           <div className="bg-soft border border-border p-5 md:p-6">
             <iframe
-              src="https://joshkelsey.substack.com/embed"
+              src="https://joshuakelsey.substack.com/embed"
               width="100%"
               height="150"
               style={{ border: "none", background: "transparent" }}
@@ -86,7 +86,7 @@ export default function Footer() {
           <div>
             <h3 className="uppercase text-[11px] tracking-[0.18em] text-muted font-sans mb-4">Follow along</h3>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="https://joshkelsey.substack.com" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">Substack</a></li>
+              <li><a href="https://joshuakelsey.substack.com" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">Substack</a></li>
               <li><a href="https://medium.com/@joshkelsey" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">Medium</a></li>
               <li><a href="https://www.linkedin.com/in/josh--kelsey/" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">LinkedIn</a></li>
               <li><a href="https://x.com/J_kelsey" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">X</a></li>

@@ -44,7 +44,7 @@ export default function ContactPage() {
                 </p>
                 <div className="bg-soft border border-border p-6 md:p-8">
                   <iframe
-                    src="https://joshkelsey.substack.com/embed"
+                    src="https://joshuakelsey.substack.com/embed"
                     width="100%"
                     height="150"
                     style={{ border: "none", background: "transparent" }}
@@ -88,7 +88,7 @@ export default function ContactPage() {
                 </p>
                 <ul className="space-y-3 font-sans text-sm">
                   <li>
-                    <a href="https://joshkelsey.substack.com" className="link-underline text-accent" target="_blank" rel="noopener noreferrer">
+                    <a href="https://joshuakelsey.substack.com" className="link-underline text-accent" target="_blank" rel="noopener noreferrer">
                       Substack
                     </a>
                   </li>
