@@ -51,33 +51,34 @@ export default function Post() {
 
           <div className="font-serif text-lg leading-[1.75] text-ink/90 space-y-6">
             <p className="drop-cap">
-              We arrived in Brooklyn in February of 2013 with a six-month-old baby, two suitcases,
-              and a vision that had been sitting on Georgie and me for three years. Snow on the
-              ground. A borrowed apartment. Five people at our first Dinner Party. Most of what
-              we&rsquo;ve learned since then, we&rsquo;ve learned the slow way.
+              In February 2013, my wife Georgie Kelsey and I moved to New York City from Sydney,
+              Australia, to plant a church. We had a six-month-old son, two suitcases, and a conviction
+              that this was where God was calling us. We did not know anyone in the city. We had no
+              building, no team, just a word from God to start as a Dinner Party. Little did we know
+              what Jesus would do as we stepped out in faith.
             </p>
+
             <p>
-              Ministry in New York doesn&rsquo;t happen on a schedule. It happens at dinner,
-              in hallways, after the last train home, in group chats at 11:47pm, in the kind of
-              conversations you didn&rsquo;t plan to have and won&rsquo;t remember planning. The
-              city doesn&rsquo;t love back easily. That&rsquo;s part of what you sign up for. But
-              when it does, when it lets you in, it does something to your faith
-              that no conference ever could.
-            </p>
-            <p>
-              Here are a few things I&rsquo;ve actually learned. Not the quotable kind. The kind
-              that only shows up after you&rsquo;ve been doing something long enough for the
-              shortcuts to fail.
+              Thirteen years later, that church, FOUNT, has become the work of our lives. And in that
+              time, I have learned a few things I wish someone had told me on the plane over.
             </p>
 
             <h2 className="font-display text-3xl text-ink mt-12 mb-2 leading-tight">
-              1. Plant slow, pastor slower.
+              1. Grow deep and grow fast.
             </h2>
             <p>
-              Church planting culture praises speed. Bigger faster sooner. But the churches that
-              last in New York are the ones where someone stayed long enough to become an actual
-              neighbor. People don&rsquo;t trust a pastor they&rsquo;ve known for six months. They
-              trust a pastor they&rsquo;ve watched through ten of their own hardest seasons.
+              Church planting culture often presents this as a binary. Either you grow slow and deep,
+              or you grow fast and shallow. That hasn&rsquo;t been our experience. We saw significant
+              and fast growth from the beginning, and we&rsquo;ve grown deep in it. The key wasn&rsquo;t
+              choosing one over the other. It was building a church where the relational fabric,
+              Dinner Parties, leaders rising from within, genuine community, was strong enough to hold
+              the growth we were seeing. Speed isn&rsquo;t the enemy of depth if the foundation is cellular.
+            </p>
+            <p>
+              We&rsquo;ve seen this tested. Through every season, the hard ones included, FOUNT has
+              continued to see lives changed, people saved, community deepened. That doesn&rsquo;t
+              happen because the church is impressive. It happens because the foundation is real.
+              The fruit has continued, and it continues still.
             </p>
 
             <h2 className="font-display text-3xl text-ink mt-12 mb-2 leading-tight">
@@ -101,27 +102,29 @@ export default function Post() {
             </p>
 
             <h2 className="font-display text-3xl text-ink mt-12 mb-2 leading-tight">
-              4. Success isn&rsquo;t what you thought it was.
+              4. The fruit is people, not programs.
             </h2>
             <p>
-              I used to measure a Sunday by attendance. Then I measured it by engagement. Then
-              by return rate. Then by something I still don&rsquo;t have a word for , 
-              something more like: did anyone leave more free than they walked in? Did a real
-              conversation happen about a real thing? Did someone we&rsquo;ve been praying for
-              take a step? Numbers still matter. But they&rsquo;re trailing indicators, not
-              leading ones.
+              From the beginning, we built FOUNT around a simple conviction. The real measure of a
+              church is what&rsquo;s happening inside the people in the room. Attendance and
+              engagement matter. But they&rsquo;re trailing indicators, the echo of something deeper.
+              What we actually watch for is whether people are being transformed. Is someone
+              we&rsquo;ve been praying for taking a step? Is a real conversation happening about a
+              real thing? Did someone leave more free than they walked in? Those are the questions
+              that have guided our leadership from year one, and they still guide it now.
             </p>
 
             <h2 className="font-display text-3xl text-ink mt-12 mb-2 leading-tight">
-              5. You cannot outrun your character.
+              5. The local church is the hope of the city.
             </h2>
             <p>
-              The most sobering thing I&rsquo;ve learned in thirteen years is that you cannot
-              build a healthy church on top of an unhealthy interior life. What happens inside
-              the pastor eventually happens inside the church. It may take ten years, but it
-              comes. Georgie and I have had to fight for our own souls more times than I can
-              count, and I&rsquo;m grateful for every pastor and friend who&rsquo;s been honest
-              with us when we needed it.
+              For all the valid conversation happening about models, structures, and strategies in
+              the modern church, the conviction that keeps us going hasn&rsquo;t changed. The local
+              church, rooted in a place, faithful over time, committed to the people in front of it,
+              is still the clearest picture of the gospel in the world. It&rsquo;s still God&rsquo;s
+              plan A for New York. Everything we&rsquo;ve built at FOUNT is built on that conviction.
+              Not the church as event. Not the church as brand. The church as family, gathering week
+              after week, believing that Jesus is who He says He is and doing what He says He&rsquo;ll do.
             </p>
 
             <h2 className="font-display text-3xl text-ink mt-12 mb-2 leading-tight">
@@ -136,7 +139,10 @@ export default function Post() {
             </p>
 
             <p className="mt-10">
-              We&rsquo;ll keep doing it here as long as He lets us.
+              Thirteen years on, FOUNT is the work of our lives. What God has built here will stand
+              through this chapter and whatever comes next. If you&rsquo;re a church planter, a pastor,
+              or a leader thinking about building something of depth, I hope something here serves
+              you. The fruit of this work belongs to Jesus, and it doesn&rsquo;t disappear.
             </p>
           </div>
 
@@ -145,7 +151,7 @@ export default function Post() {
               Josh Kelsey is the founding and lead pastor of{" "}
               <a href="https://fount.nyc" className="underline">FOUNT Church</a> in New York City,
               planted in 2013 with his wife and co-pastor{" "}
-              <a href="https://georgiekelsey.com" className="underline">Georgie Kelsey</a>.
+              <a href="https://fount.nyc" className="underline">Georgie Kelsey</a>.
             </p>
           </footer>
         </article>

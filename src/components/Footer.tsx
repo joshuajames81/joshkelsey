@@ -2,22 +2,70 @@ import Link from "next/link";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Josh Kelsey",
+    alternateName: "Joshua Kelsey",
+    jobTitle: "Founding Pastor",
+    worksFor: {
+      "@type": "Organization",
+      name: "FOUNT Church NYC",
+      url: "https://fount.nyc",
+    },
+    url: "https://joshkelsey.org",
+    sameAs: [
+      "https://joshkelsey.substack.com",
+      "https://medium.com/@joshkelsey",
+      "https://www.linkedin.com/in/josh--kelsey/",
+      "https://x.com/J_kelsey",
+      "https://www.instagram.com/jkelsey/",
+      "https://www.facebook.com/pastorjoshkelsey/",
+      "https://fount.nyc",
+    ],
+    spouse: {
+      "@type": "Person",
+      name: "Georgie Kelsey",
+      url: "https://fount.nyc",
+    },
+  };
+
   return (
     <footer className="mt-32 border-t border-border/70 bg-soft/40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <div className="max-w-content mx-auto px-6 md:px-10 py-16">
+        <div className="mb-14 pb-14 border-b border-border/70 max-w-2xl">
+          <h2 className="font-display text-3xl text-ink mb-3 leading-tight">
+            Weekly Notes
+          </h2>
+          <p className="text-muted text-sm leading-relaxed mb-6 max-w-lg">
+            Subscribe for writing, teaching, and reflections on faith, leadership, and church planting, sent once a week.
+          </p>
+          <div className="bg-soft border border-border p-5 md:p-6">
+            <iframe
+              src="https://joshkelsey.substack.com/embed"
+              width="100%"
+              height="150"
+              style={{ border: "none", background: "transparent" }}
+              frameBorder="0"
+              scrolling="no"
+            ></iframe>
+          </div>
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <div className="col-span-2 md:col-span-2 max-w-sm">
             <h2 className="font-display text-2xl leading-tight mb-3">Josh Kelsey</h2>
             <p className="text-muted text-sm leading-relaxed">
-              Founding and lead pastor of{" "}
+              Founding Pastor of{" "}
               <a href="https://fount.nyc" className="underline decoration-border hover:text-accent">
-                FOUNT Church
-              </a>{" "}
-              in New York City, which he planted with his wife and co-pastor{" "}
-              <a href="https://georgiekelsey.com" className="underline decoration-border hover:text-accent">
-                Georgie Kelsey
-              </a>{" "}
-              in 2013.
+                FOUNT Church NYC
+              </a>
+              , alongside his wife Georgie Kelsey. Planted in 2013 after moving from Sydney to New York City.
             </p>
           </div>
 
@@ -36,13 +84,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="uppercase text-[11px] tracking-[0.18em] text-muted font-sans mb-4">Elsewhere</h3>
+            <h3 className="uppercase text-[11px] tracking-[0.18em] text-muted font-sans mb-4">Follow along</h3>
             <ul className="space-y-2.5 text-sm">
+              <li><a href="https://joshkelsey.substack.com" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">Substack</a></li>
+              <li><a href="https://medium.com/@joshkelsey" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">Medium</a></li>
+              <li><a href="https://www.linkedin.com/in/josh--kelsey/" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://x.com/J_kelsey" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">X</a></li>
+              <li><a href="https://www.instagram.com/jkelsey/" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">Instagram</a></li>
+              <li><a href="https://www.facebook.com/pastorjoshkelsey/" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">Facebook</a></li>
               <li><a href="https://fount.nyc" className="hover:text-accent" rel="me">FOUNT Church</a></li>
-              <li><a href="https://georgiekelsey.com" className="hover:text-accent" rel="me">Georgie Kelsey</a></li>
-              <li><a href="https://podcasts.apple.com/us/podcast/fount/id1070613870" className="hover:text-accent" rel="me">Apple Podcasts</a></li>
-              <li><a href="https://open.spotify.com/show/1ticMy9P1FbqpZH0SNdbk7" className="hover:text-accent" rel="me">Spotify</a></li>
-              <li><a href="https://www.instagram.com/jkelsey/" className="hover:text-accent" rel="me">Instagram</a></li>
+              <li><a href="https://podcasts.apple.com/us/podcast/fount/id1070613870" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">Apple Podcasts</a></li>
+              <li><a href="https://open.spotify.com/show/1ticMy9P1FbqpZH0SNdbk7" className="hover:text-accent" target="_blank" rel="me noopener noreferrer">Spotify</a></li>
             </ul>
           </div>
         </div>
