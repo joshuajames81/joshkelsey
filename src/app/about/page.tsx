@@ -102,7 +102,7 @@ export default function AboutPage() {
                 The name FOUNT
               </h2>
               <p>
-                God gave Georgie a vision for our church&rsquo;s name through the beloved hymn{" "}
+                God gave Georgie and I our church&rsquo;s name through the beloved hymn{" "}
                 <em>Come Thou Fount of Every Blessing</em>. From those words came the conviction that
                 still shapes everything we do. Jesus is the Fount. And out of Him, the church
                 becomes a fount too, every life an overflow, every church a river, every city a
@@ -120,7 +120,7 @@ export default function AboutPage() {
                 rooted while moving fast.
               </p>
               <p>
-                I split my time between New York City and Sydney, where I grew up. My three kids
+                I split my time between New York City and Sydney, where I grew up. My two sons
                 keep me honest, humbled, and occasionally late.
               </p>
 
