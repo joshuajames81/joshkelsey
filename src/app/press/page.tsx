@@ -6,7 +6,15 @@ export const metadata = {
   description: "Selected press, interviews, and features on Josh Kelsey, Georgie Kelsey, and FOUNT Church NYC.",
 };
 
-const editorialFeatures = [
+type PressItem = {
+  outlet: string;
+  title: string;
+  date?: string;
+  description?: string;
+  url: string;
+};
+
+const editorialFeatures: PressItem[] = [
   {
     outlet: "RELEVANT Magazine",
     title: "Empire State of Change", 
@@ -16,7 +24,7 @@ const editorialFeatures = [
   }
 ];
 
-const features = [
+const features: PressItem[] = [
   {
     outlet: "Yahoo Finance",
     title: "FOUNT Church's Josh & Georgie Kelsey Raise Awareness on Loneliness and the Power of Real Connection",
@@ -39,7 +47,7 @@ const features = [
   }
 ];
 
-const profiles = [
+const profiles: PressItem[] = [
   {
     outlet: "Crunchbase",
     title: "FOUNT NYC — Organization Profile",
@@ -90,7 +98,15 @@ export default function PressPage() {
   );
 }
 
-function PressSection({ title, items, featured = false }) {
+function PressSection({ 
+  title, 
+  items, 
+  featured = false 
+}: { 
+  title: string; 
+  items: PressItem[]; 
+  featured?: boolean; 
+}) {
   return (
     <section>
       <h2 className="font-display text-3xl text-ink mb-8">{title}</h2>
