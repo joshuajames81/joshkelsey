@@ -51,7 +51,8 @@ export const metadata: Metadata = {
     description:
       "Founding and lead pastor of FOUNT Church in New York City.",
     images: ["/og-image.jpg"],
-    creator: "@joshkelsey",
+    creator: "@J_kelsey",
+    site: "@J_kelsey",
   },
   robots: {
     index: true,
@@ -65,13 +66,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Replace these with real verification codes once set up in Search Console, Bing, etc.
     google: "REPLACE_WITH_GOOGLE_VERIFICATION_CODE",
   },
 };
 
-// Person schema, the single most important SEO asset on this site.
-// Tells Google the knowledge-graph facts about Josh.
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -109,10 +107,19 @@ const personSchema = {
   sameAs: [
     "https://fount.nyc",
     "https://georgiekelsey.com",
+    "https://joshuakelsey.substack.com",
+    "https://medium.com/@joshkelsey",
+    "https://www.linkedin.com/in/josh--kelsey/",
+    "https://x.com/J_kelsey",
     "https://www.instagram.com/jkelsey/",
     "https://www.facebook.com/pastorjoshkelsey/",
     "https://podcasts.apple.com/us/podcast/fount/id1070613870",
     "https://open.spotify.com/show/1ticMy9P1FbqpZH0SNdbk7",
+    "https://www.crunchbase.com/organization/fount-nyc",
+    "https://relevantmagazine.com/magazine/features/empire-state-of-change/",
+    "https://finance.yahoo.com/news/fount-churchs-josh-georgie-kelsey-144500826.html",
+    "https://bmmagazine.co.uk/business/fount-church-on-building-community-in-a-fast-moving-city/",
+    "https://ceoworld.biz/2026/01/28/fount-church-building-a-people-first-movement-in-nyc/",
   ],
   description:
     "Josh Kelsey is the founding and lead pastor of FOUNT Church in New York City, which he planted in 2013 with his wife and co-pastor Georgie Kelsey.",
@@ -145,7 +152,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Fonts, served from Google Fonts for best performance and SEO-friendly fallbacks */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -153,7 +159,6 @@ export default function RootLayout({
           rel="stylesheet"
         />
 
-        {/* Structured data, this is what powers Google's knowledge panel */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
