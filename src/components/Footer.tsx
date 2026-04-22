@@ -73,6 +73,7 @@ export default function Footer() {
             <h3 className="uppercase text-[11px] tracking-[0.18em] text-muted font-sans mb-4">Explore</h3>
             <ul className="space-y-2.5 text-sm">
               <li><Link href="/about" className="hover:text-accent">About</Link></li>
+              <li><Link href="/press" className="hover:text-accent">Press</Link></li>
               <li><Link href="/writing" className="hover:text-accent">Writing</Link></li>
               <li><Link href="/sermons" className="hover:text-accent">Sermons</Link></li>
               <li><Link href="/dinner-parties" className="hover:text-accent">Dinner Parties</Link></li>
