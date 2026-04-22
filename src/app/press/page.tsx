@@ -47,6 +47,29 @@ const features: PressItem[] = [
   }
 ];
 
+const thoughtLeadership: PressItem[] = [
+  {
+    outlet: "Entrepreneurship Life",
+    title: "How Community-First Leadership Scales Without Losing Culture",
+    url: "https://www.entrepreneurshiplife.com/how-community-first-leadership-scales-without-losing-culture/"
+  },
+  {
+    outlet: "Entrepreneurs Break",
+    title: "Dinner Tables Still Matter in a Screen-First Economy", 
+    url: "https://entrepreneursbreak.com/dinner-tables-still-matter-in-a-screen-first-economy.html"
+  },
+  {
+    outlet: "Startup Opinions",
+    title: "People Over Platforms: Building Influence Without Chasing Visibility",
+    url: "https://www.startupopinions.com/people-over-platforms-building-influence-without-chasing-visibility/"
+  },
+  {
+    outlet: "Startuprise",
+    title: "Decentralised Leadership Models and the Future of Organisations", 
+    url: "https://startuprise.co.uk/decentralised-leadership-models-and-the-future-of-organisations/"
+  }
+];
+
 const profiles: PressItem[] = [
   {
     outlet: "Crunchbase",
@@ -70,7 +93,7 @@ export default function PressPage() {
               Press &amp; Media
             </h1>
             <p className="font-serif text-lg text-ink/80 leading-relaxed max-w-prose">
-              Selected press, interviews, and features on Josh Kelsey, Georgie Kelsey, and FOUNT Church NYC — covering the Dinner Party model, community, loneliness, and church planting in New York, Paris, and Berlin.
+              Selected press, interviews, and features on Josh Kelsey, Georgie Kelsey, and FOUNT Church NYC — covering the Dinner Party model, community, loneliness, decentralized leadership, and church planting in New York, Paris, and Berlin.
             </p>
           </header>
 
@@ -84,6 +107,12 @@ export default function PressPage() {
             <PressSection 
               title="Features & Interviews" 
               items={features}
+            />
+            
+            <PressSection 
+              title="Thought Leadership"
+              items={thoughtLeadership}
+              compact={true}
             />
             
             <PressSection 
@@ -101,28 +130,38 @@ export default function PressPage() {
 function PressSection({ 
   title, 
   items, 
-  featured = false 
+  featured = false,
+  compact = false
 }: { 
   title: string; 
   items: PressItem[]; 
-  featured?: boolean; 
+  featured?: boolean;
+  compact?: boolean;
 }) {
   return (
     <section>
       <h2 className="font-display text-3xl text-ink mb-8">{title}</h2>
-      <div className="space-y-8">
+      <div className={compact ? "space-y-4" : "space-y-8"}>
         {items.map((item) => (
-          <div key={item.url} className={featured ? "border-l-2 border-accent pl-6" : "border-b border-border/60 pb-8"}>
+          <div key={item.url} className={
+            featured 
+              ? "border-l-2 border-accent pl-6" 
+              : compact
+              ? "border-b border-border/60 pb-4"
+              : "border-b border-border/60 pb-8"
+          }>
             <div className="flex items-center gap-3 mb-2">
               <span className="font-sans text-sm uppercase tracking-wide text-muted">{item.outlet}</span>
               {item.date && <span className="font-sans text-sm text-muted">• {item.date}</span>}
             </div>
-            <h3 className={`font-display ${featured ? "text-2xl" : "text-xl"} text-ink mb-2`}>
+            <h3 className={`font-display ${
+              featured ? "text-2xl" : compact ? "text-lg" : "text-xl"
+            } text-ink mb-2`}>
               <a href={item.url} className="link-underline hover:text-accent" target="_blank" rel="noopener">
                 {item.title}
               </a>
             </h3>
-            {item.description && (
+            {item.description && !compact && (
               <p className="text-base text-ink/75 leading-relaxed mb-3">{item.description}</p>
             )}
             <a href={item.url} target="_blank" rel="noopener" 
