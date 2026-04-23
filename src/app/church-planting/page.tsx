@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ChapterHeader from "@/components/ChapterHeader";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
@@ -91,7 +90,6 @@ export default function ChurchPlantingPage() {
   return (
     <>
       <Nav />
-    <>
       <main>
         {/* HERO */}
         <section className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28">
@@ -237,16 +235,13 @@ export default function ChurchPlantingPage() {
           </div>
         </section>
       </main>
-            <Footer />
-    </>
+      <Footer />
     </>
   );
 }
 
 function ChapterCard({ chapter }: { chapter: Chapter }) {
   return (
-    <>
-      <Nav />
     <Link
       href={chapter.href}
       className="group block border border-border bg-paper p-6 md:p-8 hover:border-ink transition-colors"
