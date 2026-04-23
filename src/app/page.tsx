@@ -152,6 +152,7 @@ export default function HomePage() {
           </div>
         </section>
 
+
         {/* FINAL CTA */}
         <section className="max-w-content mx-auto px-6 md:px-10 py-24 md:py-32">
           <div className="max-w-2xl">
@@ -160,26 +161,18 @@ export default function HomePage() {
               Subscribe for new writing, sermons, and teaching.
             </h2>
             <p className="font-serif text-lg text-ink/80 mb-8">
-              An occasional email, never sold, never spam. Just my latest essays,
-              sermon series, and what I&rsquo;m thinking about from NYC and beyond.
+              Weekly notes on faith, leadership, and church planting from NYC and beyond.
             </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-lg" action="/api/subscribe" method="POST">
-              <label htmlFor="email" className="sr-only">Email address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="you@example.com"
-                className="flex-1 px-5 py-3.5 bg-soft border border-border rounded-full font-sans text-sm focus:outline-none focus:border-ink focus:ring-0"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3.5 bg-ink text-paper rounded-full font-sans text-sm hover:bg-accent transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <div className="bg-soft border border-border rounded-lg p-6 md:p-8 shadow-sm">
+              <iframe
+                src="https://joshuakelsey.substack.com/embed"
+                width="100%"
+                height="200"
+                style={{ border: "none", background: "transparent" }}
+                frameBorder="0"
+                scrolling="no"
+              ></iframe>
+            </div>
           </div>
         </section>
       </main>

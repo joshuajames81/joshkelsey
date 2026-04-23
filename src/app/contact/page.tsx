@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Stay in Touch · Josh Kelsey",
   description:
-    "Subscribe to weekly notes from Josh Kelsey. Writing, teaching, and reflections on faith, leadership, and church planting from the founding pastor of FOUNT Church NYC.",
+    "Read Josh Kelsey on Substack. Writing, teaching, and reflections on faith, leadership, and church planting from the founding pastor of FOUNT Church NYC.",
   alternates: { canonical: "https://joshkelsey.org/contact" },
   openGraph: {
     title: "Stay in Touch · Josh Kelsey",

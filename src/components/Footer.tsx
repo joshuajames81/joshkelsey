@@ -45,11 +45,11 @@ export default function Footer() {
           <p className="text-muted text-sm leading-relaxed mb-6 max-w-lg">
             Subscribe for writing, teaching, and reflections on faith, leadership, and church planting, sent once a week.
           </p>
-          <div className="bg-soft border border-border p-5 md:p-6">
+          <div className="bg-soft border border-border rounded-lg p-6 md:p-8 shadow-sm">
             <iframe
               src="https://joshuakelsey.substack.com/embed"
               width="100%"
-              height="150"
+              height="200"
               style={{ border: "none", background: "transparent" }}
               frameBorder="0"
               scrolling="no"
