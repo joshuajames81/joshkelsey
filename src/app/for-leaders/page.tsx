@@ -1,116 +1,200 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "For Leaders",
+  title: "Leadership Training Library · Josh Kelsey",
   description:
-    "Leadership resources, teaching, and reflections from Pastor Josh Kelsey on culture, equipping teams, preaching, and the long work of pastoring well.",
+    "A three-week intensive on building real community, effective teams, and raising leaders. Kingdom principles that work across all industries and contexts.",
   alternates: { canonical: "https://joshkelsey.org/for-leaders" },
-  openGraph: {
-    title: "For Leaders | Josh Kelsey",
-    description:
-      "Leadership resources and teaching from Pastor Josh Kelsey.",
-    url: "https://joshkelsey.org/for-leaders",
-  },
 };
+
+type Chapter = {
+  number: string;
+  href: string;
+  title: string;
+  description: string;
+};
+
+const weeks: Chapter[] = [
+  {
+    number: "01",
+    href: "/for-leaders/week-1",
+    title: "Building Real Community",
+    description: "The 5 stages of community development. Moving from pseudo community through chaos and emptying to build something real and lasting.",
+  },
+  {
+    number: "02", 
+    href: "/for-leaders/week-2",
+    title: "Effective Teams",
+    description: "The six fundamentals that make teams work. From clarity of vision to open communication, the conditions that sustain what God builds.",
+  },
+  {
+    number: "03",
+    href: "/for-leaders/week-3",
+    title: "Raising Leaders",
+    description: "Teaching your team to fish. The four stages of development and how to multiply leaders who multiply leaders.",
+  },
+];
+
+const resources = [
+  {
+    href: "/for-leaders/action-plan.pdf",
+    title: "Post-Course Action Plan (PDF)",
+    description: "Downloadable assessment and planning guide for implementing leadership principles in your context.",
+  },
+];
 
 export default function ForLeadersPage() {
   return (
-    <div className="min-h-screen flex flex-col paper-grain">
-      <Nav />
-      <main className="flex-1">
-        <section className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-12">
-          <p className="uppercase text-[11px] tracking-[0.22em] text-accent font-sans mb-6">
-            Culture · Equipping · Endurance
-          </p>
-          <h1 className="font-display text-display-xl font-medium leading-[0.95] text-ink max-w-4xl">
-            For
-            <span className="italic text-accent"> Leaders.</span>
-          </h1>
-          <p className="mt-8 max-w-prose font-serif text-lg md:text-xl text-ink/85 leading-relaxed">
-            The long work of leading people and building culture. Lessons from
-            thirteen years of pastoring, planting, and equipping teams in three of the
-            hardest cities in the world.
-          </p>
+    <>
+      <main>
+        {/* HERO */}
+        <section className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28">
+          <div className="max-w-4xl">
+            <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-muted mb-6">
+              Leadership Training
+            </p>
+            <h1 className="font-display text-display-xl md:text-display-2xl leading-[0.95] text-ink mb-6">
+              For
+              <br />
+              <span className="italic text-accent">Leaders.</span>
+            </h1>
+            <p className="font-serif text-xl md:text-2xl text-ink/80 max-w-3xl leading-relaxed">
+              A three week intensive on building real community, effective teams, and raising leaders. 
+              Kingdom principles that work across all industries and contexts.
+            </p>
+          </div>
         </section>
 
-        <section className="border-y border-border/60 bg-soft/40">
+        {/* ORIGIN */}
+        <section className="bg-soft/40 border-y border-border/60">
           <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
-            <div className="rule text-[11px] uppercase tracking-[0.22em] font-sans mb-12">
-              Who This Is For
+            <h2 className="font-display text-display-lg leading-[1.02] text-ink mb-8">
+              Why This Training Exists
+            </h2>
+            <div className="max-w-prose font-serif text-lg text-ink/85 leading-relaxed space-y-5">
+              <p>
+                Thirteen years of building teams in one of the world's most challenging cities has taught us that 
+                great leadership is not about being indispensable. It's about making everyone around you better.
+              </p>
+              <p>
+                This training emerged from real experience. Building FOUNT Church across New York, Paris, and Berlin. 
+                Leading through crisis, growth, and everything in between. Training over seven hundred leaders who 
+                are now building their own teams around the world.
+              </p>
+              <p>
+                What you'll find here are kingdom principles that transcend church context. These foundations work 
+                in boardrooms and nonprofits, startups and established organizations, anywhere people need to work 
+                together toward something that matters.
+              </p>
+              <p>
+                Use this material freely. Adapt it to your context. Build your teams with it. The principles 
+                belong to the kingdom, not to us.
+              </p>
             </div>
-            <article className="max-w-prose mx-auto font-serif text-lg md:text-xl leading-[1.75] text-ink/90">
-              <p className="drop-cap">
-                Pastors. Ministry leaders. Team leads. Anyone doing the kind of work
-                that asks more of you than any job description ever captured, and who
-                wants to do it for the long haul without losing the plot.
-              </p>
-              <p className="mt-6">
-                I&rsquo;ve spent the last thirteen years leading a church through every
-                kind of season. Planting, scaling, pandemic, global expansion,
-                rebuild. I&rsquo;ve hired staff, lost staff, hired them back. Built
-                culture, watched it fracture, rebuilt it. Preached through weeks I felt
-                nothing, and weeks where the Spirit nearly undid me.
-              </p>
-              <p className="mt-6">
-                What I want to share here is what I&rsquo;ve actually learned. Not theory,
-                not conference content, but the real practices and convictions that have
-                kept Georgie and me in the work and in love with it thirteen years in.
-              </p>
-            </article>
           </div>
         </section>
 
-        <section className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="rule text-[11px] uppercase tracking-[0.22em] font-sans mb-12">
-            What&rsquo;s Coming
+        {/* COURSE WEEKS */}
+        <section className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-24">
+          <div className="mb-10">
+            <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-accent mb-3">
+              Three Week Course
+            </p>
+            <h2 className="font-display text-display-lg leading-[1.02] text-ink mb-4">
+              The Journey
+            </h2>
+            <p className="font-serif text-lg text-ink/75 max-w-prose">
+              From performance to presence. From pseudo community to real community. From managing people to raising leaders.
+            </p>
           </div>
-          <div className="max-w-prose font-serif text-lg text-ink/85 leading-relaxed space-y-5">
-            <p>
-              A full library of leadership content. On building healthy team
-              culture, equipping the next generation, navigating conflict, preaching
-              well, pastoring through crisis, and the spiritual formation required to
-              actually lead for thirty or forty years and not just ten.
-            </p>
-            <p>
-              Coming here soon. If you&rsquo;d like to be in touch directly, reach out
-              through the{" "}
-              <Link href="/contact" className="link-underline text-accent">contact page</Link>.
-            </p>
+          <div className="grid gap-6">
+            {weeks.map((week) => (
+              <ChapterCard key={week.href} chapter={week} />
+            ))}
           </div>
         </section>
 
-        <section className="max-w-content mx-auto px-6 md:px-10 py-20">
-          <div className="rule text-[11px] uppercase tracking-[0.22em] font-sans mb-12">
-            Related Resources
+        {/* RESOURCES */}
+        <section className="bg-soft/40 border-y border-border/60">
+          <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-24">
+            <div className="rule text-[11px] uppercase tracking-[0.22em] font-sans mb-12">
+              Resources
+            </div>
+            <div className="grid md:grid-cols-1 gap-6 max-w-2xl">
+              {resources.map((r) => (
+                
+                  key={r.href}
+                  href={r.href}
+                  className="group block border border-border bg-paper p-6 md:p-8 hover:border-ink transition-colors"
+                >
+                  <h3 className="font-display text-2xl md:text-3xl text-ink mb-3 group-hover:text-accent transition-colors leading-tight">
+                    {r.title}
+                  </h3>
+                  <p className="font-serif text-ink/75 leading-relaxed">{r.description}</p>
+                </a>
+              ))}
+            </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 md:gap-10">
-            <Link href="/church-planting" className="group block border-t border-border pt-8 hover:border-ink transition-colors">
-              <p className="uppercase text-[10px] tracking-[0.22em] font-sans text-muted mb-4">Training</p>
-              <h3 className="font-display text-3xl md:text-4xl leading-tight text-ink mb-4 group-hover:text-accent transition-colors">
-                Church Planting
-              </h3>
-              <p className="font-serif text-ink/75 leading-relaxed">
-                Resources for planting and pastoring churches in challenging cities, drawn
-                from thirteen years of FOUNT plants in New York, Paris, and Berlin.
+        </section>
+
+        {/* CTA */}
+        <section className="bg-ink text-paper">
+          <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-10">
+            <div className="md:col-span-5">
+              <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-paper/60 mb-6">
+                Start Here
               </p>
-            </Link>
-            <Link href="/dinner-parties" className="group block border-t border-border pt-8 hover:border-ink transition-colors">
-              <p className="uppercase text-[10px] tracking-[0.22em] font-sans text-muted mb-4">Model</p>
-              <h3 className="font-display text-3xl md:text-4xl leading-tight text-ink mb-4 group-hover:text-accent transition-colors">
-                Dinner Parties
-              </h3>
-              <p className="font-serif text-ink/75 leading-relaxed">
-                The Dinner Party model at the heart of FOUNT. How we gather,
-                disciple, and plant through tables, not programs.
+              <h2 className="font-display text-display-lg leading-[1.02]">
+                Begin with<br />
+                <span className="italic text-paper/80">community.</span>
+              </h2>
+            </div>
+            <div className="md:col-span-7 font-serif text-lg leading-relaxed text-paper/90">
+              <p>
+                Everything flows from real community. You cannot build an effective team without it. 
+                You cannot raise leaders without it. Start with understanding the five stages every group 
+                must navigate to move from performance to presence.
               </p>
-            </Link>
+              <p className="mt-5">
+                Work through each week in order. Do the exercises. Have the conversations. Let the 
+                principles reshape how you think about leadership, not just how you manage tasks.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/for-leaders/week-1"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-paper text-ink rounded-full hover:bg-accent hover:text-paper transition-colors text-sm font-sans"
+                >
+                  Begin Week One <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>
       <Footer />
-    </div>
+    </>
+  );
+}
+
+function ChapterCard({ chapter }: { chapter: Chapter }) {
+  return (
+    <Link
+      href={chapter.href}
+      className="group block border border-border bg-paper p-6 md:p-8 hover:border-ink transition-colors"
+    >
+      <div className="flex items-start gap-6 md:gap-10">
+        <p className="font-display text-3xl md:text-4xl text-muted group-hover:text-accent transition-colors shrink-0 leading-none">
+          {chapter.number}
+        </p>
+        <div className="flex-1">
+          <h3 className="font-display text-xl md:text-2xl text-ink mb-2 group-hover:text-accent transition-colors leading-tight">
+            {chapter.title}
+          </h3>
+          <p className="font-serif text-ink/75 leading-relaxed">{chapter.description}</p>
+        </div>
+      </div>
+    </Link>
   );
 }
