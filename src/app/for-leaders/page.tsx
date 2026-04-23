@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ const resources = [
 export default function ForLeadersPage() {
   return (
     <>
+      <Nav />
       <main>
         {/* HERO */}
         <section className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28">
