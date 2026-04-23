@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ChapterHeader from "@/components/ChapterHeader";
+import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -88,6 +89,8 @@ const partThree: Chapter[] = [
 
 export default function ChurchPlantingPage() {
   return (
+    <>
+      <Nav />
     <>
       <main>
         {/* HERO */}
@@ -234,13 +237,16 @@ export default function ChurchPlantingPage() {
           </div>
         </section>
       </main>
-      <Footer />
+            <Footer />
+    </>
     </>
   );
 }
 
 function ChapterCard({ chapter }: { chapter: Chapter }) {
   return (
+    <>
+      <Nav />
     <Link
       href={chapter.href}
       className="group block border border-border bg-paper p-6 md:p-8 hover:border-ink transition-colors"
