@@ -38,14 +38,6 @@ const weeks: Chapter[] = [
   },
 ];
 
-const resources = [
-  {
-    href: "/for-leaders/action-plan.pdf",
-    title: "Post-Course Action Plan (PDF)",
-    description: "Downloadable assessment and planning guide for implementing leadership principles in your context.",
-  },
-];
-
 export default function ForLeadersPage() {
   return (
     <>
@@ -115,29 +107,6 @@ export default function ForLeadersPage() {
             {weeks.map((week) => (
               <ChapterCard key={week.href} chapter={week} />
             ))}
-          </div>
-        </section>
-
-        {/* RESOURCES */}
-        <section className="bg-soft/40 border-y border-border/60">
-          <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-24">
-            <div className="rule text-[11px] uppercase tracking-[0.22em] font-sans mb-12">
-              Resources
-            </div>
-            <div className="grid md:grid-cols-1 gap-6 max-w-2xl">
-              {resources.map((r) => (
-                
-                  key={r.href}
-                  href={r.href}
-                  className="group block border border-border bg-paper p-6 md:p-8 hover:border-ink transition-colors"
-                >
-                  <h3 className="font-display text-2xl md:text-3xl text-ink mb-3 group-hover:text-accent transition-colors leading-tight">
-                    {r.title}
-                  </h3>
-                  <p className="font-serif text-ink/75 leading-relaxed">{r.description}</p>
-                </a>
-              ))}
-            </div>
           </div>
         </section>
 
