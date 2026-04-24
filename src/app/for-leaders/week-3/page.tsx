@@ -263,7 +263,7 @@ export default function Week3Page() {
           </div>
         </section>
 
-        <ChapterNav navigation={navigation} />
+        <ChapterNav previous={navigation.previous} next={navigation.next} />
       </main>
       <Footer />
     </>

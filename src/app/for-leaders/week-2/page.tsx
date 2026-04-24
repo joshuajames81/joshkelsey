@@ -190,7 +190,7 @@ export default function Week2Page() {
           </div>
         </section>
 
-        <ChapterNav navigation={navigation} />
+        <ChapterNav previous={navigation.previous} next={navigation.next} />
       </main>
       <Footer />
     </>
