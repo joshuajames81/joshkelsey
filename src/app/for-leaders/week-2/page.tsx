@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 };
 
 const navigation = {
-  previous: { href: "/for-leaders/week-1", title: "Week 1: Building Real Community" },
-  next: { href: "/for-leaders/week-3", title: "Week 3: Raising Leaders" },
+  previous: { href: "/for-leaders/week-1", title: "Week 1: Building Real Community", part: "Week 1" },
+  next: { href: "/for-leaders/week-3", title: "Week 3: Raising Leaders", part: "Week 3" },
 };
 
 export default function Week2Page() {

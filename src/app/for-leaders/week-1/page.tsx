@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 };
 
 const navigation = {
-  previous: { href: "/for-leaders", title: "Leadership Training" },
-  next: { href: "/for-leaders/week-2", title: "Week 2: Effective Teams" },
+  previous: { href: "/for-leaders", title: "Leadership Training", part: "Overview" },
+  next: { href: "/for-leaders/week-2", title: "Week 2: Effective Teams", part: "Week 2" },
 };
 
 export default function Week1Page() {
