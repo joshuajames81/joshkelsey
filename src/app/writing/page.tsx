@@ -12,6 +12,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "the-first-and-the-last",
+    title: "The First and the Last",
+    excerpt:
+      "Two finish lines on The Mall, and the race that matters most. On Sabastian Sawe, Clair Roberts, and what both of them teach us about running the race called life.",
+    date: "April 2026",
+    readTime: "8 min read",
+  },
+  {
     slug: "the-church-is-not-the-fount",
     title: "The church is not the Fount",
     excerpt:
