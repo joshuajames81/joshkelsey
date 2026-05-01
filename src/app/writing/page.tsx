@@ -15,7 +15,7 @@ const posts = [
     slug: "the-first-and-the-last",
     title: "The First and the Last",
     excerpt:
-      "Two finish lines on The Mall, and the race that matters most. On Sabastian Sawe, Clair Roberts, and what both of them teach us about running the race called life.",
+      "One ran 1:59:30. The other ran 12:16:00. On Sabastian Sawe, Clair Roberts, and what both of them teach us about finishing, faith, and the race called life.",
     date: "April 2026",
     readTime: "8 min read",
   },
