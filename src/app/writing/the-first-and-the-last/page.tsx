@@ -5,14 +5,15 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "The First and the Last",
   description:
-    "Pastor Josh Kelsey on Sabastian Sawe's sub-two-hour London Marathon and Clair Roberts who finished last, and what both of them teach us about running the race called life.",
+    "Pastor Josh Kelsey on Sabastian Sawe's sub two hour London Marathon and Clair Roberts who finished last, and what both of them teach us about running the race called life.",
   alternates: { canonical: "https://joshkelsey.org/writing/the-first-and-the-last" },
   openGraph: {
     title: "The First and the Last | Josh Kelsey",
     description:
-      "Two finish lines on The Mall, and the race that matters most.",
+      "One ran 1:59:30. The other ran 12:16:00. On finishing, faith, and the race called life.",
     type: "article",
     publishedTime: "2026-04-29",
+    modifiedTime: "2026-05-01",
     authors: ["Josh Kelsey"],
   },
 };
@@ -24,7 +25,7 @@ const articleSchema = {
   author: { "@type": "Person", name: "Josh Kelsey", url: "https://joshkelsey.org" },
   publisher: { "@type": "Person", name: "Josh Kelsey" },
   datePublished: "2026-04-29",
-  dateModified: "2026-04-29",
+  dateModified: "2026-05-01",
   mainEntityOfPage: "https://joshkelsey.org/writing/the-first-and-the-last",
 };
 
@@ -41,7 +42,7 @@ export default function Post() {
               The First and the Last.
             </h1>
             <p className="font-serif italic text-lg text-muted mb-6">
-              Two finish lines on The Mall, and the race that matters most.
+              One ran 1:59:30. The other ran 12:16:00. On finishing, faith, and the race called life.
             </p>
             <div className="flex items-center gap-4 text-sm font-sans text-muted">
               <span>Josh Kelsey</span>
@@ -62,12 +63,10 @@ export default function Post() {
               1 hour, 59 minutes, and 30 seconds. The other took 12 hours and 16 minutes.
             </p>
 
-            <p>
-              I want to tell you why both of them are heroes.
-            </p>
+            <p>I want to tell you why both of them are heroes.</p>
 
             <h2 className="font-display text-2xl md:text-3xl font-medium text-ink pt-6 pb-2">
-              The First
+              The First: Sabastian Sawe and the Two Hour Barrier
             </h2>
 
             <p>
@@ -93,25 +92,22 @@ export default function Post() {
             </p>
 
             <p>
-              After the race he said, &ldquo;I had a lot of courage to push, even when the pace
-              was fast.&rdquo;
-            </p>
-
-            <p>
-              That&rsquo;s it. That&rsquo;s the whole interview. The man who just moved marathon
-              running&rsquo;s four minute mile shrugged and said <em>I had courage</em>. A line
-              moved on Sunday that will never move back.
+              After the race, he barely talked about himself. The man who just moved marathon
+              running&rsquo;s four minute mile told the BBC, &ldquo;Approaching the end of the
+              race, I was feeling strong, and my fellow Ethiopian was so competitive, I think he
+              was the one who helped a lot.&rdquo; A line moved on Sunday that will never move
+              back.
             </p>
 
             <h2 className="font-display text-2xl md:text-3xl font-medium text-ink pt-6 pb-2">
-              The Last
+              The Last: Clair Roberts and the Finish Line in the Dark
             </h2>
 
             <p>
               Clair Roberts is 35. From Milton Keynes. Not an elite. Not an athlete by any measure
-              she would recognise. She crossed the finish line at 12 hours and 16 minutes, just
-              before midnight, on a Mall that had already been swept, the elite tents already taken
-              down, Sawe&rsquo;s medal probably already in a drawer somewhere.
+              she would recognise. She crossed the finish line at 12 hours and 16 minutes, well
+              after the elite tents had been taken down, after the streets had reopened, after
+              Sawe&rsquo;s medal was probably already in a drawer somewhere.
             </p>
 
             <p>
@@ -129,11 +125,20 @@ export default function Post() {
             <p>
               She raised around &pound;2,000. She was helped over the final stretch by{" "}
               <em>tailwalkers</em>, volunteers who walk with the slowest runners after the roads
-              reopen, guiding them to a secondary finish line at St James&rsquo;s Park because
-              The Mall has long since closed. She had never pushed her body that hard before. She
-              told the BBC, &ldquo;I kept thinking, if I could get through that dark period in my
-              life, I could get through this. I want to show others that there is always
-              hope.&rdquo;
+              reopen, guiding them to a secondary finish line at St James&rsquo;s Park because The
+              Mall has long since closed. She had never pushed her body that hard before.
+            </p>
+
+            <p>
+              She told the BBC, &ldquo;I was battling a lot of emotions on Sunday. It was so much
+              harder than I thought it would be. But to be the last person to cross that line
+              feels really special, and I&rsquo;m proud of myself.&rdquo;
+            </p>
+
+            <p>
+              On the Samaritans, she said: &ldquo;During a really tough time in my life, they
+              saved me from myself. I plunged into very dark times, but it is amazing what one
+              phone call can do.&rdquo;
             </p>
 
             <h2 className="font-display text-2xl md:text-3xl font-medium text-ink pt-6 pb-2">
@@ -146,6 +151,12 @@ export default function Post() {
               greater. The medal does not.
             </p>
 
+            <blockquote className="border-l-2 pl-6 italic my-8 text-ink/80">
+              The marathon, as an event, has always quietly insisted on something the world
+              doesn&rsquo;t believe. That finishing is the point. Speed is a category.
+              Perseverance is the discipline.
+            </blockquote>
+
             <p>
               I&rsquo;ve run a few marathons myself. I know what 26.2 miles asks of you. And the
               more I think about Sunday, the more I think the harder question isn&rsquo;t what
@@ -155,12 +166,9 @@ export default function Post() {
             </p>
 
             <p>
-              This isn&rsquo;t false equivalence. Sawe is the greatest marathoner who has ever
-              lived. But the marathon, as an event, has always quietly insisted on something the
-              world doesn&rsquo;t believe. That <em>finishing</em> is the point. Speed is a
-              category. Perseverance is the discipline. And the same finish line waits for the
-              fastest human ever timed and the woman who comes in just before midnight with the
-              streetlights as her crowd.
+              This isn&rsquo;t false equivalence. Sawe is the fastest marathoner who has ever
+              lived. But the same finish line waits for the fastest human ever timed and the woman
+              who comes in last with the streetlights as her crowd.
             </p>
 
             <h2 className="font-display text-2xl md:text-3xl font-medium text-ink pt-6 pb-2">
@@ -179,8 +187,8 @@ export default function Post() {
               Paul, near the end, didn&rsquo;t write <em>I won the race</em>. He wrote,{" "}
               <em>τὸν δρόμον τετέλεκα</em>, <em>ton dromon teteleka</em>,{" "}
               <em>I have finished the race</em> (2 Timothy 4:7). And here is something that has
-              not left me since Easter. The verb Paul uses for <em>finished</em>, <em>teleō</em>,
-              is the same verb Jesus used from the cross. <em>Tetelestai</em>.{" "}
+              not left me since this last Easter. The verb Paul uses for <em>finished</em>,{" "}
+              <em>teleō</em>, is the same verb Jesus used from the cross. <em>Tetelestai</em>.{" "}
               <em>It is finished.</em>
             </p>
 
@@ -207,42 +215,6 @@ export default function Post() {
             </p>
 
             <h2 className="font-display text-2xl md:text-3xl font-medium text-ink pt-6 pb-2">
-              Two Questions
-            </h2>
-
-            <p>One more thought before you go.</p>
-
-            <p>
-              Most of us spend our lives watching the front of the pack. We celebrate the Sawes.
-              We measure ourselves against the people breaking tape and breaking history, and we
-              wonder why we feel behind.
-            </p>
-
-            <p>But the back of the pack is where the gospel actually lives.</p>
-
-            <p>So two questions.</p>
-
-            <p>
-              Who in your world right now could you be a tailwalker for? Not the ones winning. The
-              ones limping. The ones at hour eleven of something hard. The ones who wouldn&rsquo;t
-              finish if someone didn&rsquo;t walk the last few miles beside them. Pick a name.
-              Walk with them.
-            </p>
-
-            <p>
-              And who could you be a Clair to? Clair didn&rsquo;t get to The Mall on her own.
-              Seven years ago, a stranger picked up a phone and gave her another day to live. She
-              is the answer to that phone call. Maybe you are someone&rsquo;s phone call. Maybe
-              you&rsquo;ve already been picked up off the floor of your own life by grace, and
-              someone in your orbit needs you to be the voice on the line.
-            </p>
-
-            <p>
-              The race is not just about finishing your own. It&rsquo;s about who you carry with
-              you.
-            </p>
-
-            <h2 className="font-display text-2xl md:text-3xl font-medium text-ink pt-6 pb-2">
               A Word, If You&rsquo;re Winning
             </h2>
 
@@ -257,17 +229,22 @@ export default function Post() {
 
             <p>
               Here&rsquo;s what struck me about his interview after the most extraordinary
-              marathon performance in human history. He said he didn&rsquo;t realise he&rsquo;d
-              broken the record. He&rsquo;d been so locked in on his friend Yomif Kejelcha, the
-              runner stride for stride beside him, that he never looked at the clock. He
-              wasn&rsquo;t running for history. He was running with someone he loved. The history
+              marathon performance in human history. He talked first about Kejelcha. The man
+              stride for stride beside him. The runner who, in Sawe&rsquo;s words, &ldquo;was the
+              one who helped a lot.&rdquo; He wasn&rsquo;t running for history. He was running
+              with someone competitive enough to keep him at world record pace. The history
               happened on its own.
             </p>
 
             <p>
-              Before the race, he had also voluntarily asked the anti doping authority to test
-              him <em>more</em>, not less, because Kenyan distance running has been dogged by
+              Before the race, he had also voluntarily asked the antidoping authority to test him{" "}
+              <em>more</em>, not less, because Kenyan distance running has been dogged by
               suspicion and he wanted his name above it.
+            </p>
+
+            <p>
+              He told reporters, &ldquo;For the new generation, it shows to run a record is
+              possible. Everything is possible with a matter of time.&rdquo;
             </p>
 
             <p>That is what winning well looks like.</p>
@@ -275,9 +252,9 @@ export default function Post() {
             <p>
               It looks like running for the person next to you, not the cameras above you. It
               looks like inviting accountability you don&rsquo;t owe. It looks like an interview
-              that names courage instead of yourself. It looks like crossing the line and saying,
-              &ldquo;It is a day to remember for me and my family,&rdquo; when half the planet
-              just watched you make history.
+              that names a friend instead of yourself. It looks like crossing the line and saying,
+              &ldquo;It&rsquo;s a day to remember for me,&rdquo; when half the planet just watched
+              you make history.
             </p>
 
             <p>
@@ -288,8 +265,7 @@ export default function Post() {
 
             <p>
               The way to win even further is to win like Sawe. Quietly. Honestly. With your friend
-              in the lane next to you. With your family the first thing on your lips when the tape
-              breaks.
+              in the lane next to you.
             </p>
 
             <h2 className="font-display text-2xl md:text-3xl font-medium text-ink pt-6 pb-2">
@@ -298,20 +274,60 @@ export default function Post() {
 
             <p>
               If you are reading this and you are somewhere around mile 22 of something hard. A
-              marriage. A calling. A grief. A battle for your own life. Let me say what was said
-              of Clair when she came in just before midnight.
+              marriage. A calling. A grief. A battle for your own life. Let me say what Sonya
+              Trivedy of the Samaritans said of Clair when she came in long after the crowds had
+              gone home:
             </p>
 
-            <p>
-              You don&rsquo;t finish last. You just get to celebrate the achievement for longer.
-            </p>
+            <blockquote className="border-l-2 pl-6 italic my-8 text-ink/80">
+              &ldquo;When it comes to something as amazing as completing a marathon, you
+              don&rsquo;t finish last, you just get to celebrate the achievement for longer.&rdquo;
+            </blockquote>
 
             <p>
               The race has already been finished for you. <em>Tetelestai.</em> What&rsquo;s asked
               of you now is not speed. It&rsquo;s the next step.
             </p>
 
+            <h2 className="font-display text-2xl md:text-3xl font-medium text-ink pt-6 pb-2">
+              Two Questions for the Rest of Us
+            </h2>
+
+            <p>
+              Most of us spend our lives watching the front of the pack. We celebrate the Sawes.
+              We measure ourselves against the people breaking tape and breaking history, and we
+              wonder why we feel behind.
+            </p>
+
+            <p>But the back of the pack is where the gospel actually lives.</p>
+
+            <p>So two questions.</p>
+
+            <p>
+              <strong>Who in your world right now could you be a tailwalker for?</strong> Not the
+              ones winning. The ones limping. The ones at hour eleven of something hard. The ones
+              who wouldn&rsquo;t finish if someone didn&rsquo;t walk the last few miles beside
+              them. Pick a name. Walk with them.
+            </p>
+
+            <p>
+              <strong>And who could you be a Clair to?</strong> Clair didn&rsquo;t get to The Mall
+              on her own. Seven years ago, a stranger picked up a phone and gave her another day
+              to live. She is the answer to that phone call. Maybe you are someone&rsquo;s phone
+              call. Maybe you&rsquo;ve already been picked up off the floor of your own life by
+              grace, and someone in your orbit needs you to be the voice on the line.
+            </p>
+
+            <p>
+              The race is not just about finishing your own. It&rsquo;s about who you carry with
+              you.
+            </p>
+
             <p>Run on.</p>
+
+            <p className="italic text-muted pt-6">
+              If this landed, the kindest thing you can do is forward it to one person at mile 22.
+            </p>
           </div>
         </article>
       </main>
