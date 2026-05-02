@@ -15,9 +15,64 @@ export const metadata = {
   },
 };
 
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  url: "https://joshkelsey.org/press/eternity-news-dinner-party-church",
+  name: "Josh Kelsey on the Dinner Party Church | Featured in Eternity News",
+  description: "Josh Kelsey, founding pastor of FOUNT Church NYC, shares the Dinner Party church vision in Eternity News.",
+  mainEntity: {
+    "@type": "Person",
+    name: "Josh Kelsey",
+    alternateName: "Joshua Kelsey",
+    jobTitle: "Founding Pastor",
+    worksFor: {
+      "@type": "Organization",
+      name: "FOUNT Church",
+      url: "https://fount.nyc",
+    },
+    spouse: {
+      "@type": "Person",
+      name: "Georgie Kelsey",
+    },
+    sameAs: [
+      "https://www.linkedin.com/in/josh--kelsey/",
+      "https://joshkelsey.substack.com",
+      "https://fount.nyc",
+      "https://www.instagram.com/jkelsey/",
+    ],
+  },
+  about: {
+    "@type": "NewsArticle",
+    headline: "C3 Church knows the power of dinner parties",
+    url: "https://eternitynews.com.au/australia/c3-church-knows-the-power-of-dinner-parties/",
+    datePublished: "2017-04-12",
+    publisher: {
+      "@type": "NewsMediaOrganization",
+      name: "Eternity News",
+      url: "https://eternitynews.com.au",
+    },
+    about: [
+      { "@type": "Person", name: "Josh Kelsey", url: "https://joshkelsey.org" },
+      { "@type": "Person", name: "Georgie Kelsey" },
+      { "@type": "Organization", name: "FOUNT Church", url: "https://fount.nyc" },
+    ],
+  },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://joshkelsey.org" },
+      { "@type": "ListItem", position: 2, name: "Press", item: "https://joshkelsey.org/press" },
+      { "@type": "ListItem", position: 3, name: "Eternity News", item: "https://joshkelsey.org/press/eternity-news-dinner-party-church" },
+    ],
+  },
+};
+
 export default function EternityNewsPressPage() {
   return (
     <div className="min-h-screen flex flex-col paper-grain">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Nav />
       <main className="flex-1">
         <article className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24">
