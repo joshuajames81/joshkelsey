@@ -40,6 +40,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/dinner-parties/invitation`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/dinner-parties/menu-ideas`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/dinner-parties/leaders-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/press`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/press/eternity-news-dinner-party-church`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     // Other sections
     { url: `${base}/church-planting`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/for-leaders`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

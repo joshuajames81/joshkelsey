@@ -44,6 +44,13 @@ const features: PressItem[] = [
     date: "January 2026",
     description: "On culture, scaling without losing the heart of the work, and leadership for the long haul.",
     url: "https://ceoworld.biz/2026/01/28/fount-church-building-a-people-first-movement-in-nyc/"
+  },
+  {
+    outlet: "Eternity News",
+    title: "C3 Church Knows the Power of Dinner Parties",
+    date: "April 2017",
+    description: "Featured at C3 Presence on the Dinner Party church model. Josh and Georgie Kelsey on building NYC ministry around tables instead of stages.",
+    url: "/press/eternity-news-dinner-party-church"
   }
 ];
 
