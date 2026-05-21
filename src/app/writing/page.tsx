@@ -17,7 +17,7 @@ const posts = [
     excerpt:
       "On auxin, the Greek verb Paul used in 1 Corinthians 3:6, and the one thing none of us can actually do: make the growth happen.",
     date: "May 2026",
-    readTime: "4 min read",
+    readTime: "6 min read",
   },
   {
     slug: "the-press",
