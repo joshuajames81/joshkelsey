@@ -10,6 +10,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/sermons`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/writing`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     {
+      url: `${base}/writing/you-cant-make-it-grow`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${base}/writing/the-first-and-the-last`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${base}/writing/the-church-is-not-the-fount`,
       lastModified: now,
       changeFrequency: "monthly",

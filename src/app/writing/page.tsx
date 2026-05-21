@@ -12,6 +12,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "you-cant-make-it-grow",
+    title: "You Can&rsquo;t Make It Grow",
+    excerpt:
+      "On auxin, the Greek verb Paul used in 1 Corinthians 3:6, and the one thing none of us can actually do: make the growth happen.",
+    date: "May 2026",
+    readTime: "4 min read",
+  },
+  {
     slug: "the-first-and-the-last",
     title: "The First and the Last",
     excerpt:
