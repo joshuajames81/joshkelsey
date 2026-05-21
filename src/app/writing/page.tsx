@@ -20,6 +20,14 @@ const posts = [
     readTime: "4 min read",
   },
   {
+    slug: "the-press",
+    title: "The Press",
+    excerpt:
+      "Gethsemane means press of oils. On the Hebrew gat shemanim, Isaiah&rsquo;s oil of gladness, and why the oil of joy is the oil of crushing.",
+    date: "May 2026",
+    readTime: "6 min read",
+  },
+  {
     slug: "the-first-and-the-last",
     title: "The First and the Last",
     excerpt:

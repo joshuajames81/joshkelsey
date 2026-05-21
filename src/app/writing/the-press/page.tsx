@@ -7,12 +7,26 @@ export const metadata: Metadata = {
   title: "Pressed: The Oil of Joy is the Oil of Crushing",
   description:
     "A pastoral reflection on Gethsemane, the Hebrew gat shemanim, Isaiah 61, and why the same word names both the garden where Jesus was crushed and the oil of gladness given to those who mourn.",
+  keywords: [
+    "Josh Kelsey",
+    "Pastor Josh Kelsey",
+    "Georgie Kelsey",
+    "FOUNT Church NYC",
+    "FOUNT NYC",
+    "Gethsemane meaning",
+    "gat shemanim",
+    "oil of gladness",
+    "Isaiah 61",
+    "suffering and faith",
+  ],
   alternates: { canonical: "https://joshkelsey.org/writing/the-press" },
   openGraph: {
-    title: "Pressed | Josh Kelsey",
+    title: "The Press | Josh Kelsey",
     description: "Gethsemane means press of oils. The oil of joy is the oil of crushing.",
     type: "article",
+    url: "https://joshkelsey.org/writing/the-press",
     publishedTime: "2026-05-08",
+    modifiedTime: "2026-05-08",
     authors: ["Josh Kelsey"],
   },
 };
@@ -21,11 +35,24 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Pressed: The Oil of Joy is the Oil of Crushing",
-  author: { "@type": "Person", name: "Josh Kelsey", url: "https://joshkelsey.org" },
-  publisher: { "@type": "Person", name: "Josh Kelsey" },
+  description:
+    "On Gethsemane, the Hebrew gat shemanim, Isaiah's oil of gladness, and why the oil of joy is the oil of crushing.",
+  author: {
+    "@type": "Person",
+    "@id": "https://joshkelsey.org/#person",
+    name: "Josh Kelsey",
+    url: "https://joshkelsey.org",
+  },
+  publisher: { "@id": "https://joshkelsey.org/#person" },
   datePublished: "2026-05-08",
   dateModified: "2026-05-08",
   mainEntityOfPage: "https://joshkelsey.org/writing/the-press",
+  image: "https://joshkelsey.org/og-image.jpg",
+  about: [
+    { "@type": "Thing", name: "Gethsemane" },
+    { "@type": "Thing", name: "Suffering and faith" },
+    { "@type": "Thing", name: "Christian spirituality" },
+  ],
 };
 
 export default function Post() {
