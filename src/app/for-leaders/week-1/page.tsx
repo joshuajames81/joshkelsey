@@ -216,7 +216,7 @@ export default function Week1Page() {
               </div>
             </div>
 
-            <div className="bg-ink/5 border border-ink/20 p-8 mt-12">
+            <div className="bg-white/[0.04] border border-white/15 p-8 mt-12">
               <h3 className="text-xl font-display mb-4 text-ink">For Reflection: Where Is Your Team Right Now?</h3>
               <p className="font-serif text-lg leading-relaxed mb-6">
                 Most teams cycle between pseudo community and chaos without ever reaching real community. They get stuck in patterns of surface level niceness interrupted by uncomfortable conflict, followed by a retreat back to false peace.

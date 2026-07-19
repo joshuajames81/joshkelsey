@@ -1,11 +1,21 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
+import { graphJson, webPageNode } from "@/lib/schema";
 
 export const metadata = {
   title: "Press & Media",
   description: "Selected press, interviews, and features on Josh Kelsey, Georgie Kelsey, and FOUNT Church NYC.",
   alternates: { canonical: "https://joshkelsey.org/press" },
 };
+
+const schema = graphJson([
+  webPageNode(
+    "/press",
+    "Press & Media | Josh Kelsey",
+    "Selected press, interviews, and features on Josh Kelsey, Georgie Kelsey, and FOUNT Church NYC."
+  ),
+]);
 
 type PressItem = {
   outlet: string;
@@ -18,7 +28,7 @@ type PressItem = {
 const editorialFeatures: PressItem[] = [
   {
     outlet: "RELEVANT Magazine",
-    title: "Empire State of Change", 
+    title: "Empire State of Change",
     date: "2018",
     description: "A cover feature on New York City's church planting movement. Josh Kelsey is quoted alongside Tim Keller on the city, the gospel, and the work of planting churches in NYC.",
     url: "https://relevantmagazine.com/magazine/features/empire-state-of-change/"
@@ -29,18 +39,18 @@ const features: PressItem[] = [
   {
     outlet: "Yahoo Finance",
     title: "FOUNT Church's Josh & Georgie Kelsey Raise Awareness on Loneliness and the Power of Real Connection",
-    date: "February 2026", 
+    date: "February 2026",
     description: "On loneliness, the Dinner Party model, and why real community is the antidote to a disconnected city.",
     url: "https://finance.yahoo.com/news/fount-churchs-josh-georgie-kelsey-144500826.html"
   },
   {
     outlet: "Business Matters Magazine",
     title: "FOUNT Church on Building Community in a Fast-Moving City",
-    description: "How FOUNT's people-first model has shaped a decade of ministry across New York, Paris, and Berlin.", 
+    description: "How FOUNT's people-first model has shaped a decade of ministry across New York, Paris, and Berlin.",
     url: "https://bmmagazine.co.uk/business/fount-church-on-building-community-in-a-fast-moving-city/"
   },
   {
-    outlet: "CEOWorld Magazine", 
+    outlet: "CEOWorld Magazine",
     title: "FOUNT Church: Building a People-First Movement in NYC",
     date: "January 2026",
     description: "On culture, scaling without losing the heart of the work, and leadership for the long haul.",
@@ -63,7 +73,7 @@ const thoughtLeadership: PressItem[] = [
   },
   {
     outlet: "Entrepreneurs Break",
-    title: "Dinner Tables Still Matter in a Screen-First Economy", 
+    title: "Dinner Tables Still Matter in a Screen-First Economy",
     url: "https://entrepreneursbreak.com/dinner-tables-still-matter-in-a-screen-first-economy.html"
   },
   {
@@ -73,7 +83,7 @@ const thoughtLeadership: PressItem[] = [
   },
   {
     outlet: "Startuprise",
-    title: "Decentralised Leadership Models and the Future of Organisations", 
+    title: "Decentralised Leadership Models and the Future of Organisations",
     url: "https://startuprise.co.uk/decentralised-leadership-models-and-the-future-of-organisations/"
   }
 ];
@@ -89,96 +99,81 @@ const profiles: PressItem[] = [
 
 export default function PressPage() {
   return (
-    <div className="min-h-screen flex flex-col paper-grain">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schema }} />
       <Nav variant="solid" />
-      <main className="flex-1">
-        <div className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24">
-          <header className="mb-16 max-w-3xl">
-            <p className="uppercase text-[11px] tracking-[0.22em] text-accent font-sans mb-6">
-              Press · Media · Features
-            </p>
-            <h1 className="font-display text-display-xl font-medium leading-[0.95] text-ink mb-8">
-              Press &amp; Media
-            </h1>
-            <p className="font-serif text-lg text-ink/80 leading-relaxed max-w-prose">
-              Selected press, interviews, and features on Josh Kelsey, Georgie Kelsey, and FOUNT Church NYC — covering the Dinner Party model, community, loneliness, decentralized leadership, and church planting in New York, Paris, and Berlin.
-            </p>
-          </header>
+      <main style={{ paddingTop: "clamp(5rem,10vw,8rem)" }}>
+        <section className="wrap" style={{ paddingBottom: "clamp(2rem,4vw,3rem)" }}>
+          <p className="mono" data-r style={{ marginBottom: "1.4rem" }}>
+            Press · Media · Features
+          </p>
+          <h1
+            className="font-disp"
+            data-r
+            style={{ fontWeight: 900, fontSize: "clamp(3rem,11vw,10rem)", lineHeight: 0.9, letterSpacing: "-0.045em" }}
+          >
+            Press &amp; Media
+          </h1>
+          <p
+            className="font-serif"
+            data-r
+            style={{ marginTop: "1.4rem", maxWidth: "60ch", fontSize: "1.28rem", color: "rgba(241,239,230,0.75)" }}
+          >
+            Selected press, interviews, and features on Josh Kelsey, Georgie Kelsey, and FOUNT Church NYC — covering the Dinner Party model, community, loneliness, decentralized leadership, and church planting in New York, Paris, and Berlin.
+          </p>
+        </section>
 
-          <div className="space-y-16">
-            <PressSection 
-              title="Editorial Features"
-              items={editorialFeatures}
-              featured={true}
-            />
-            
-            <PressSection 
-              title="Features & Interviews" 
-              items={features}
-            />
-            
-            <PressSection 
-              title="Thought Leadership"
-              items={thoughtLeadership}
-              compact={true}
-            />
-            
-            <PressSection 
-              title="Profiles"
-              items={profiles}
-            />
+        <section className="writing" style={{ borderTop: "none", paddingTop: 0 }}>
+          <div className="wrap">
+            <PressSection title="Editorial Features" items={editorialFeatures} />
+            <PressSection title="Features & Interviews" items={features} />
+            <PressSection title="Thought Leadership" items={thoughtLeadership} />
+            <PressSection title="Profiles" items={profiles} />
           </div>
-        </div>
+        </section>
+
+        <Subscribe />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 
-function PressSection({ 
-  title, 
-  items, 
-  featured = false,
-  compact = false
-}: { 
-  title: string; 
-  items: PressItem[]; 
-  featured?: boolean;
-  compact?: boolean;
-}) {
+function PressSection({ title, items }: { title: string; items: PressItem[] }) {
   return (
-    <section>
-      <h2 className="font-display text-3xl text-ink mb-8">{title}</h2>
-      <div className={compact ? "space-y-4" : "space-y-8"}>
-        {items.map((item) => (
-          <div key={item.url} className={
-            featured 
-              ? "border-l-2 border-accent pl-6" 
-              : compact
-              ? "border-b border-border/60 pb-4"
-              : "border-b border-border/60 pb-8"
-          }>
-            <div className="flex items-center gap-3 mb-2">
-              <span className="font-sans text-sm uppercase tracking-wide text-muted">{item.outlet}</span>
-              {item.date && <span className="font-sans text-sm text-muted">• {item.date}</span>}
-            </div>
-            <h3 className={`font-display ${
-              featured ? "text-2xl" : compact ? "text-lg" : "text-xl"
-            } text-ink mb-2`}>
-              <a href={item.url} className="link-underline hover:text-accent" target="_blank" rel="noopener">
-                {item.title}
-              </a>
-            </h3>
-            {item.description && !compact && (
-              <p className="text-base text-ink/75 leading-relaxed mb-3">{item.description}</p>
-            )}
-            <a href={item.url} target="_blank" rel="noopener" 
-               className="inline-block font-sans text-sm uppercase tracking-wide text-accent hover:text-ink">
-              Read →
+    <div style={{ marginBottom: "clamp(3rem,6vw,5rem)" }}>
+      <h2
+        className="font-disp"
+        data-r
+        style={{
+          fontWeight: 900,
+          fontSize: "clamp(1.4rem,3vw,2rem)",
+          letterSpacing: "-0.025em",
+          marginBottom: "0.4rem",
+        }}
+      >
+        {title}
+      </h2>
+      <div className="wlist">
+        {items.map((item, i) => {
+          const external = item.url.startsWith("http");
+          return (
+            <a
+              key={item.url}
+              className="wrow"
+              href={item.url}
+              data-h
+              data-r
+              {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            >
+              <span className="wn">{String(i + 1).padStart(2, "0")}</span>
+              <span className="wt">{item.title}</span>
+              <span className="wm">{item.date ? `${item.outlet} · ${item.date}` : item.outlet}</span>
+              <span className="wa">→</span>
             </a>
-          </div>
-        ))}
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }

@@ -29,6 +29,7 @@ export default function EssayLayout({
   wordCount,
   keywords,
   description,
+  headline: headlineProp,
   children,
 }: {
   slug: string;
@@ -46,10 +47,14 @@ export default function EssayLayout({
   wordCount?: number;
   keywords?: string[];
   description: string;
+  headline?: string;
   children: React.ReactNode;
 }) {
   const path = `/writing/${slug}`;
-  const headline = `${titleLead}${titleAccent}${titleTail || ""}`.replace(/\s+/g, " ").trim();
+  const visibleTitle = `${titleLead}${titleAccent}${titleTail || ""}`.replace(/\s+/g, " ").trim();
+  // Schema headline preserves the essay's existing SEO title when it differs
+  // from the visible display title.
+  const headline = headlineProp || visibleTitle;
   const schema = graphJson([
     webPageNode(path, `${headline} | Josh Kelsey`, description),
     articleNode({

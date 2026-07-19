@@ -229,7 +229,7 @@ export default function Week2Page() {
               </div>
             </div>
 
-            <div className="bg-ink/5 border border-ink/20 p-8 mt-12">
+            <div className="bg-white/[0.04] border border-white/15 p-8 mt-12">
               <h3 className="text-xl font-display mb-4 text-ink">The Through Line</h3>
               <p className="font-serif text-lg leading-relaxed mb-6">
                 Every one of these six team fundamentals is downstream of one thing: the willingness to move through Pseudo, through Chaos, through Emptying, and stay there long enough to build something real.

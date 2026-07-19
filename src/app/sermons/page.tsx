@@ -115,7 +115,7 @@ export default function SermonsPage() {
                 href="https://podcasts.apple.com/us/podcast/fount/id1070613870"
                 target="_blank"
                 rel="noopener"
-                className="px-5 py-2.5 bg-ink text-paper rounded-full text-sm font-sans hover:bg-accent transition-colors"
+                className="px-5 py-2.5 bg-flare text-deep rounded-full text-sm font-sans hover:bg-fg transition-colors"
               >
                 Apple Podcasts
               </a>
@@ -123,13 +123,13 @@ export default function SermonsPage() {
                 href="https://open.spotify.com/show/1ticMy9P1FbqpZH0SNdbk7"
                 target="_blank"
                 rel="noopener"
-                className="px-5 py-2.5 bg-ink text-paper rounded-full text-sm font-sans hover:bg-accent transition-colors"
+                className="px-5 py-2.5 bg-flare text-deep rounded-full text-sm font-sans hover:bg-fg transition-colors"
               >
                 Spotify
               </a>
               <Link
                 href="/podcast"
-                className="px-5 py-2.5 border border-ink rounded-full text-sm font-sans hover:bg-ink hover:text-paper transition-colors"
+                className="px-5 py-2.5 border border-fg rounded-full text-sm font-sans hover:bg-flare hover:text-deep transition-colors"
               >
                 About the FOUNT podcast
               </Link>

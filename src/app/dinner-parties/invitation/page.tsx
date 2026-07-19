@@ -181,7 +181,7 @@ export default function Page() {
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-paper rounded-full text-sm font-sans hover:bg-accent transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-flare text-deep rounded-full text-sm font-sans hover:bg-fg transition-colors"
             >
               Get in touch <span aria-hidden>→</span>
             </a>

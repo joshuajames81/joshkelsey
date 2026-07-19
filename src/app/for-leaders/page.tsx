@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
+import { graphJson, webPageNode } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Leadership Training Library",
@@ -9,6 +11,14 @@ export const metadata: Metadata = {
     "A three-week intensive on building real community, effective teams, and raising leaders. Kingdom principles that work across all industries and contexts.",
   alternates: { canonical: "https://joshkelsey.org/for-leaders" },
 };
+
+const schema = graphJson([
+  webPageNode(
+    "/for-leaders",
+    "Leadership Training Library | Josh Kelsey",
+    "A three-week intensive on building real community, effective teams, and raising leaders. Kingdom principles that work across all industries and contexts.",
+  ),
+]);
 
 type Chapter = {
   number: string;
@@ -25,7 +35,7 @@ const weeks: Chapter[] = [
     description: "The 5 stages of community development. Moving from pseudo community through chaos and emptying to build something real and lasting.",
   },
   {
-    number: "02", 
+    number: "02",
     href: "/for-leaders/week-2",
     title: "Effective Teams",
     description: "The six fundamentals that make teams work. From clarity of vision to open communication, the conditions that sustain what God builds.",
@@ -38,52 +48,68 @@ const weeks: Chapter[] = [
   },
 ];
 
+const cover = "/site-images/for-leaders.jpg";
+
 export default function ForLeadersPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schema }} />
       <Nav variant="solid" />
-      <main>
+      <main style={{ paddingTop: "clamp(5rem,10vw,8rem)" }}>
         {/* HERO */}
-        <section className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28">
-          <div className="max-w-4xl">
-            <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-muted mb-6">
-              Leadership Training
-            </p>
-            <h1 className="font-display text-display-xl md:text-display-2xl leading-[0.95] text-ink mb-6">
-              For
-              <br />
-              <span className="italic text-accent">Leaders.</span>
-            </h1>
-            <p className="font-serif text-xl md:text-2xl text-ink/80 max-w-3xl leading-relaxed">
-              A three week intensive on building real community, effective teams, and raising leaders. 
-              Kingdom principles that work across all industries and contexts.
-            </p>
-          </div>
+        <section className="wrap" style={{ paddingBottom: "clamp(2rem,4vw,3rem)" }}>
+          <p className="mono" data-r style={{ marginBottom: "1.4rem" }}>
+            Leadership Training
+          </p>
+          <h1
+            className="font-disp"
+            data-r
+            style={{ fontWeight: 900, fontSize: "clamp(3rem,11vw,10rem)", lineHeight: 0.9, letterSpacing: "-0.045em" }}
+          >
+            For{" "}
+            <em className="text-flare" style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400, letterSpacing: 0 }}>
+              Leaders.
+            </em>
+          </h1>
+          <p
+            className="font-serif"
+            data-r
+            style={{ marginTop: "1.4rem", maxWidth: "52ch", fontSize: "1.28rem", color: "rgba(241,239,230,0.75)" }}
+          >
+            A three week intensive on building real community, effective teams, and raising leaders.
+            Kingdom principles that work across all industries and contexts.
+          </p>
         </section>
 
         {/* ORIGIN */}
-        <section className="bg-soft/40 border-y border-border/60">
-          <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
-            <h2 className="font-display text-display-lg leading-[1.02] text-ink mb-8">
+        <section className="writing" style={{ borderTop: "1px solid var(--line)", paddingTop: "clamp(3.5rem,7vw,6rem)", paddingBottom: "clamp(3.5rem,7vw,6rem)" }}>
+          <div className="wrap">
+            <h2
+              className="font-disp text-fg"
+              style={{ fontWeight: 900, fontSize: "clamp(2.4rem,6vw,5rem)", lineHeight: 1.02, letterSpacing: "-0.04em", marginBottom: "clamp(1.4rem,3vw,2.2rem)" }}
+            >
               Why This Training Exists
             </h2>
-            <div className="max-w-prose font-serif text-lg text-ink/85 leading-relaxed space-y-5">
+            <div
+              className="font-serif"
+              style={{ maxWidth: "52ch", fontSize: "1.28rem", lineHeight: 1.72, color: "rgba(241,239,230,0.82)", display: "grid", gap: "1.4rem" }}
+            >
               <p>
-                Thirteen years of building teams in one of the world's most challenging cities has taught us that 
-                great leadership is not about being indispensable. It's about making everyone around you better.
+                Thirteen years of building teams in one of the world&rsquo;s most challenging cities has taught us that
+                great leadership is not about being indispensable. It&rsquo;s about making everyone around you better.
               </p>
               <p>
-                This training emerged from real experience. Building FOUNT Church across New York, Paris, and Berlin. 
-                Leading through crisis, growth, and everything in between. Training over seven hundred leaders who 
+                This training emerged from real experience. Building FOUNT Church across New York, Paris, and Berlin.
+                Leading through crisis, growth, and everything in between. Training over seven hundred leaders who
                 are now building their own teams around the world.
               </p>
               <p>
-                What you'll find here are kingdom principles that transcend church context. These foundations work 
-                in boardrooms and nonprofits, startups and established organizations, anywhere people need to work 
+                What you&rsquo;ll find here are kingdom principles that transcend church context. These foundations work
+                in boardrooms and nonprofits, startups and established organizations, anywhere people need to work
                 together toward something that matters.
               </p>
               <p>
-                Use this material freely. Adapt it to your context. Build your teams with it. The principles 
+                Use this material freely. Adapt it to your context. Build your teams with it. The principles
                 belong to the kingdom, not to us.
               </p>
             </div>
@@ -91,51 +117,92 @@ export default function ForLeadersPage() {
         </section>
 
         {/* COURSE WEEKS */}
-        <section className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-24">
-          <div className="mb-10">
-            <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-accent mb-3">
-              Three Week Course
-            </p>
-            <h2 className="font-display text-display-lg leading-[1.02] text-ink mb-4">
-              The Journey
-            </h2>
-            <p className="font-serif text-lg text-ink/75 max-w-prose">
-              From performance to presence. From pseudo community to real community. From managing people to raising leaders.
-            </p>
-          </div>
-          <div className="grid gap-6">
-            {weeks.map((week) => (
-              <ChapterCard key={week.href} chapter={week} />
-            ))}
+        <section className="writing" style={{ borderTop: "1px solid var(--line)", paddingTop: "clamp(3rem,6vw,5rem)", paddingBottom: "clamp(3rem,6vw,5rem)" }}>
+          <div className="wrap">
+            <div style={{ marginBottom: "clamp(1.4rem,3vw,2.4rem)" }}>
+              <p className="mono flare" style={{ marginBottom: "0.8rem" }}>
+                Three Week Course
+              </p>
+              <h2
+                className="font-disp text-fg"
+                style={{ fontWeight: 900, fontSize: "clamp(2.4rem,6vw,5rem)", lineHeight: 1.02, letterSpacing: "-0.04em", marginBottom: "0.8rem" }}
+              >
+                The Journey
+              </h2>
+              <p className="font-serif" style={{ maxWidth: "52ch", fontSize: "1.15rem", color: "rgba(241,239,230,0.7)" }}>
+                From performance to presence. From pseudo community to real community. From managing people to raising leaders.
+              </p>
+            </div>
+            <div className="wlist">
+              {weeks.map((week) => (
+                <Link key={week.href} className="wrow" href={week.href} data-h data-r>
+                  <div
+                    className="cover"
+                    style={{ backgroundImage: `url('${cover}')` }}
+                    role="img"
+                    aria-label="Leaders building community together"
+                  />
+                  <span className="wn">{week.number}</span>
+                  <span className="wt" data-dec>{week.title}</span>
+                  <span className="wm">{week.description}</span>
+                  <span className="wa">→</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="bg-ink text-paper">
-          <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-10">
-            <div className="md:col-span-5">
-              <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-paper/60 mb-6">
-                Start Here
-              </p>
-              <h2 className="font-display text-display-lg leading-[1.02]">
-                Begin with<br />
-                <span className="italic text-paper/80">community.</span>
-              </h2>
-            </div>
-            <div className="md:col-span-7 font-serif text-lg leading-relaxed text-paper/90">
-              <p>
-                Everything flows from real community. You cannot build an effective team without it. 
-                You cannot raise leaders without it. Start with understanding the five stages every group 
-                must navigate to move from performance to presence.
-              </p>
-              <p className="mt-5">
-                Work through each week in order. Do the exercises. Have the conversations. Let the 
-                principles reshape how you think about leadership, not just how you manage tasks.
-              </p>
-              <div className="mt-8">
+        <section className="writing" style={{ borderTop: "1px solid var(--line)", paddingTop: "clamp(4rem,8vw,7rem)", paddingBottom: "clamp(4rem,8vw,7rem)" }}>
+          <div className="wrap">
+            <div
+              className="bg-soft border-line"
+              style={{ border: "1px solid var(--line)", padding: "clamp(2rem,5vw,4rem)", display: "grid", gap: "2rem" }}
+            >
+              <div>
+                <p className="mono flare" style={{ marginBottom: "1rem" }}>
+                  Start Here
+                </p>
+                <h2
+                  className="font-disp text-fg"
+                  style={{ fontWeight: 900, fontSize: "clamp(2.4rem,6vw,5rem)", lineHeight: 1.02, letterSpacing: "-0.04em" }}
+                >
+                  Begin with{" "}
+                  <em className="text-flare" style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400, letterSpacing: 0 }}>
+                    community.
+                  </em>
+                </h2>
+              </div>
+              <div
+                className="font-serif"
+                style={{ maxWidth: "56ch", fontSize: "1.2rem", lineHeight: 1.7, color: "rgba(241,239,230,0.82)", display: "grid", gap: "1.25rem" }}
+              >
+                <p>
+                  Everything flows from real community. You cannot build an effective team without it.
+                  You cannot raise leaders without it. Start with understanding the five stages every group
+                  must navigate to move from performance to presence.
+                </p>
+                <p>
+                  Work through each week in order. Do the exercises. Have the conversations. Let the
+                  principles reshape how you think about leadership, not just how you manage tasks.
+                </p>
+              </div>
+              <div>
                 <Link
                   href="/for-leaders/week-1"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-paper text-ink rounded-full hover:bg-accent hover:text-paper transition-colors text-sm font-sans"
+                  className="bg-flare text-deep rounded-full hover:bg-fg"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    padding: "0.85rem 1.6rem",
+                    fontFamily: "var(--mono)",
+                    fontSize: "0.7rem",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    fontWeight: 700,
+                    transition: "background 0.3s var(--e1)",
+                  }}
                 >
                   Begin Week One <span aria-hidden>→</span>
                 </Link>
@@ -143,29 +210,10 @@ export default function ForLeadersPage() {
             </div>
           </div>
         </section>
+
+        <Subscribe />
       </main>
       <Footer />
     </>
-  );
-}
-
-function ChapterCard({ chapter }: { chapter: Chapter }) {
-  return (
-    <Link
-      href={chapter.href}
-      className="group block border border-border bg-paper p-6 md:p-8 hover:border-ink transition-colors"
-    >
-      <div className="flex items-start gap-6 md:gap-10">
-        <p className="font-display text-3xl md:text-4xl text-muted group-hover:text-accent transition-colors shrink-0 leading-none">
-          {chapter.number}
-        </p>
-        <div className="flex-1">
-          <h3 className="font-display text-xl md:text-2xl text-ink mb-2 group-hover:text-accent transition-colors leading-tight">
-            {chapter.title}
-          </h3>
-          <p className="font-serif text-ink/75 leading-relaxed">{chapter.description}</p>
-        </div>
-      </div>
-    </Link>
   );
 }

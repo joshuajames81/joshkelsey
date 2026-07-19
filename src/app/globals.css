@@ -1150,6 +1150,25 @@ footer.site .fine {
   font-weight: 400;
   color: var(--flare);
 }
+/* Reading-column defaults for migrated essay bodies. Scoped so they enrich
+   the dark canvas without overriding intentional utility classes on display
+   lines: only unclassed paragraphs get the base reading size. */
+.reading .col > div > p:not([class]),
+.reading .col > p:not([class]) {
+  font-family: var(--serif);
+  font-size: 1.24rem;
+  line-height: 1.72;
+  color: rgba(241, 239, 230, 0.86);
+}
+.reading .col a {
+  color: var(--flare);
+}
+.reading .col a:hover {
+  text-decoration: underline;
+}
+.reading .col strong {
+  color: var(--fg);
+}
 
 /* ---------- dark prose theme (for-leaders etc.) ---------- */
 .prose {

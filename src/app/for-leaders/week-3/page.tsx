@@ -281,7 +281,7 @@ export default function Week3Page() {
               </div>
             </div>
 
-            <div className="bg-ink/5 border border-ink/20 p-8 mt-12">
+            <div className="bg-white/[0.04] border border-white/15 p-8 mt-12">
               <h3 className="text-xl font-display mb-4 text-ink">What Multiplication Actually Looks Like</h3>
               <p className="font-serif text-lg leading-relaxed mb-6">
                 If you lead a team of ten and over five years you develop each of those ten into leaders who each develop ten more, you have not added ninety people to the mission. You have built a community of a hundred leaders who can each do what you do. That is not growth by addition. That is growth by multiplication.

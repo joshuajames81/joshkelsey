@@ -101,7 +101,7 @@ export default function Page() {
                 <a
                   href="/downloads/FOUNT-dinner-parties-leaders-guide.pdf"
                   download
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-paper rounded-full text-sm font-sans hover:bg-accent transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-flare text-deep rounded-full text-sm font-sans hover:bg-fg transition-colors"
                 >
                   Download the PDF <span aria-hidden>↓</span>
                 </a>
@@ -109,7 +109,7 @@ export default function Page() {
                   href="/downloads/FOUNT-dinner-parties-leaders-guide.pdf"
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full text-sm font-sans hover:bg-ink hover:text-paper transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full text-sm font-sans hover:bg-flare hover:text-deep transition-colors"
                 >
                   Open in browser <span aria-hidden>→</span>
                 </a>
@@ -169,7 +169,7 @@ export default function Page() {
             </p>
             <Link
               href="/dinner-parties"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full text-sm font-sans hover:bg-ink hover:text-paper transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-full text-sm font-sans hover:bg-flare hover:text-deep transition-colors"
             >
               Browse the training library <span aria-hidden>→</span>
             </Link>

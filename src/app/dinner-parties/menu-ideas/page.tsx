@@ -176,7 +176,7 @@ export default function Page() {
             <div className="mt-10">
               <Link
                 href="/dinner-parties/culture"
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-full text-sm font-sans hover:bg-ink hover:text-paper transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 border border-border rounded-full text-sm font-sans hover:bg-flare hover:text-deep transition-colors"
               >
                 Read more on Culture: Food and Hospitality <span aria-hidden>→</span>
               </Link>

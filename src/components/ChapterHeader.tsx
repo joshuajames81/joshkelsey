@@ -33,8 +33,8 @@ export default function ChapterHeader({
           Part {partNumber} · {partName}
         </p>
       </div>
-      <p className="font-sans text-sm text-muted mb-4">Chapter {chapterNumber}</p>
-      <h1 className="font-display text-display-lg md:text-display-xl font-medium leading-[1] text-ink mb-8">
+      <p className="font-mono text-sm text-flare mb-4">Chapter {chapterNumber}</p>
+      <h1 className="font-disp text-display-lg md:text-display-xl font-black leading-[0.92] text-fg mb-8">
         {title}
       </h1>
       <p className="font-serif text-lg md:text-xl text-ink/80 leading-relaxed max-w-prose">
