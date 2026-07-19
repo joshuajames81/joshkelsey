@@ -26,7 +26,7 @@ export default function ChapterNav({
           <p className="uppercase text-[10px] tracking-[0.22em] font-sans text-muted mb-2">
             ← Previous · {previous.part}
           </p>
-          <p className="font-display text-xl md:text-2xl text-ink group-hover:text-accent transition-colors leading-tight">
+          <p className="font-disp font-extrabold text-xl md:text-2xl text-ink group-hover:text-accent transition-colors leading-tight">
             {previous.title}
           </p>
         </Link>
@@ -42,7 +42,7 @@ export default function ChapterNav({
           <p className="uppercase text-[10px] tracking-[0.22em] font-sans text-muted mb-2">
             Next · {next.part} →
           </p>
-          <p className="font-display text-xl md:text-2xl text-ink group-hover:text-accent transition-colors leading-tight">
+          <p className="font-disp font-extrabold text-xl md:text-2xl text-ink group-hover:text-accent transition-colors leading-tight">
             {next.title}
           </p>
         </Link>

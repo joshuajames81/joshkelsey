@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata: Metadata = {
   title: "Pressed: The Oil of Joy is the Oil of Crushing",
@@ -164,6 +165,7 @@ export default function Post() {
           </footer>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

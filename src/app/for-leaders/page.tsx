@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Leadership Training Library · Josh Kelsey",
+  title: "Leadership Training Library",
   description:
     "A three-week intensive on building real community, effective teams, and raising leaders. Kingdom principles that work across all industries and contexts.",
   alternates: { canonical: "https://joshkelsey.org/for-leaders" },

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Press & Media",
   description: "Selected press, interviews, and features on Josh Kelsey, Georgie Kelsey, and FOUNT Church NYC.",
+  alternates: { canonical: "https://joshkelsey.org/press" },
 };
 
 type PressItem = {

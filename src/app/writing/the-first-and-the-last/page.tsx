@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata: Metadata = {
   title: "The First and the Last",
@@ -331,6 +332,7 @@ export default function Post() {
           </div>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

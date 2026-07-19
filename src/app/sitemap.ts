@@ -1,69 +1,53 @@
 import type { MetadataRoute } from "next";
+import fs from "node:fs";
+import path from "node:path";
+
+const base = "https://joshkelsey.org";
+const APP_DIR = path.join(process.cwd(), "src", "app");
+
+/**
+ * Discover every route from the filesystem so the sitemap can never drift out
+ * of sync with the app (SEO fix #4). Any `page.*` under src/app becomes a URL;
+ * route groups, dynamic segments, and private folders are skipped. This
+ * automatically includes all church-planting chapters, for-leaders weeks,
+ * writing essays, /running, and any future page.
+ */
+function collectRoutes(dir: string, segments: string[] = [], out: string[] = []): string[] {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      const name = entry.name;
+      if (name.startsWith("(") || name.startsWith("[") || name.startsWith("_") || name === "api") {
+        continue;
+      }
+      collectRoutes(path.join(dir, name), [...segments, name], out);
+    } else if (entry.isFile() && /^page\.(tsx|ts|jsx|js|mdx)$/.test(entry.name)) {
+      out.push("/" + segments.join("/"));
+    }
+  }
+  return out;
+}
+
+function priorityFor(route: string): number {
+  if (route === "/") return 1;
+  const depth = route.split("/").filter(Boolean).length;
+  const top = route.split("/")[1];
+  if (["about", "sermons", "press", "dinner-parties", "church-planting"].includes(top) && depth === 1) {
+    return 0.9;
+  }
+  if (depth === 1) return 0.8;
+  return 0.7;
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://joshkelsey.org";
   const now = new Date();
+  const routes = Array.from(new Set(collectRoutes(APP_DIR))).sort((a, b) =>
+    a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b)
+  );
 
-  return [
-    { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/sermons`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${base}/writing`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
-    {
-      url: `${base}/writing/you-cant-make-it-grow`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/writing/the-press`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/writing/the-first-and-the-last`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/writing/the-church-is-not-the-fount`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/writing/thirteen-years-in-nyc`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/writing/on-preaching-the-whole-text`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    // Dinner Parties training library
-    { url: `${base}/dinner-parties`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/dinner-parties/vision`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/dinner-parties/the-night`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/dinner-parties/leadership-roles`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/dinner-parties/culture`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/dinner-parties/heart-of-a-leader`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/dinner-parties/raising-leaders`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/dinner-parties/multiplication`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/dinner-parties/sustainability`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/dinner-parties/invitation`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/dinner-parties/menu-ideas`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/dinner-parties/leaders-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/press`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${base}/press/eternity-news-dinner-party-church`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    // Other sections
-    { url: `${base}/church-planting`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/for-leaders`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/podcast`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
-  ];
+  return routes.map((route) => ({
+    url: route === "/" ? base : `${base}${route}`,
+    lastModified: now,
+    changeFrequency: route === "/" ? "weekly" : "monthly",
+    priority: priorityFor(route),
+  }));
 }

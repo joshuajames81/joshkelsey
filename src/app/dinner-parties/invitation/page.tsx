@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 import ChapterHeader from "@/components/ChapterHeader";
 import ChapterNav from "@/components/ChapterNav";
 import PullQuote from "@/components/PullQuote";
@@ -23,8 +24,8 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Invitation: Personal Ownership and Marketing",
-  author: { "@type": "Person", name: "Josh Kelsey", url: "https://joshkelsey.org" },
-  publisher: { "@type": "Person", name: "Josh Kelsey" },
+  author: { "@id": "https://joshkelsey.org/#person" },
+  publisher: { "@id": "https://joshkelsey.org/#person" },
   datePublished: "2026-04-17",
   dateModified: "2026-04-17",
   mainEntityOfPage: "https://joshkelsey.org/dinner-parties/invitation",
@@ -195,6 +196,7 @@ export default function Page() {
           />
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

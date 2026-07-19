@@ -1,180 +1,167 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
+import HomeHero from "@/components/home/HomeHero";
+import RunningSection from "@/components/home/RunningSection";
+
+const WORRY_HREF = "/writing/worry-is-the-misuse-of-your-imagination";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col paper-grain selection-accent">
-      <Nav />
+    <div className="min-h-screen flex flex-col selection-accent">
+      <Nav variant="overlay" />
 
-      <main className="flex-1">
-        {/* HERO */}
-        <section className="relative overflow-hidden">
-          <div className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36">
-            <div className="grid md:grid-cols-12 gap-10 items-end">
-              <div className="md:col-span-9 reveal">
-                <p className="uppercase text-[11px] md:text-xs tracking-[0.22em] text-accent font-sans mb-6 md:mb-8">
-                  Pastor · Teacher · Founder of FOUNT Church NYC
-                </p>
-                <h1 className="font-display text-display-xl font-medium text-ink">
-                  Josh
-                  <span className="italic text-accent"> Kelsey</span>
-                </h1>
-                <p className="mt-8 md:mt-10 max-w-prose font-serif text-lg md:text-xl leading-relaxed text-ink/90">
-                  Founding and lead pastor of{" "}
-                  <a href="https://fount.nyc" className="link-underline text-accent">
-                    FOUNT Church
-                  </a>{" "}
-                  in New York City, planted in 2013 with my wife and co-pastor{" "}
-                  <a href="https://fount.nyc" className="link-underline text-accent">
-                    Georgie Kelsey
-                  </a>
-                  . Teaching and writing on the gospel, the city, and a life shaped by Jesus,
-                  the true FOUNT.
-                </p>
-              </div>
+      <main>
+        {/* HERO — rotating quotes */}
+        <HomeHero image="/images/hero.jpg" />
 
-              <div className="md:col-span-3 md:pl-6 reveal" style={{ animationDelay: "0.2s" }}>
-                <figure className="aspect-[3/4] w-full bg-soft border border-border rounded-sm overflow-hidden relative">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url(/josh-kelsey.jpg)" }}
-                    aria-hidden
-                  />
-                  <figcaption className="sr-only">Josh Kelsey, lead pastor of FOUNT Church NYC</figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* INTRO PARAGRAPH */}
-        <section className="border-y border-border/60 bg-soft/40">
-          <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
-            <div className="rule text-[11px] uppercase tracking-[0.22em] font-sans mb-12">
-              A Note From Josh
-            </div>
-            <article className="max-w-prose mx-auto font-serif text-lg md:text-xl leading-[1.7] text-ink/90 reveal">
-              <p className="drop-cap">
-                For over thirteen years, I&rsquo;ve had the privilege of pastoring in New York City,
-                a city I love with everything in me. My wife Georgie and I planted{" "}
-                <a href="https://fount.nyc" className="link-underline">FOUNT Church</a>{" "}
-                in 2013, believing that Jesus could be met around a table and that the gospel could
-                shape a city through people who love Him and love each other. That work is not
-                finished. It may never be.
-              </p>
-              <p className="mt-6">
-                God gave Georgie and I our church&rsquo;s name through the hymn{" "}
-                <em>Come Thou Fount of Every Blessing</em>. Our conviction is this.{" "}
-                <strong className="font-semibold">Jesus is the Fount.</strong>{" "}
-                And out of Him, the church becomes a fount to the city. Every song, every sermon,
-                every Dinner Party, every Sunday, exists for that.
-              </p>
-              <p className="mt-6">
-                This site is where I share teaching, writing, sermons, and conversations on the gospel,
-                the city, and what it means to live a life genuinely shaped by Jesus. Thanks for being here.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        {/* FEATURE GRID */}
-        <section className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="rule text-[11px] uppercase tracking-[0.22em] font-sans mb-12">Where to begin</div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-            <FeatureCard
-              eyebrow="Essays & Reflections"
-              title="Writing"
-              body="Longer pieces on theology, pastoral life, New York, marriage, and what I&rsquo;m learning."
-              href="/writing"
-            />
-            <FeatureCard
-              eyebrow="Culture & Equipping"
-              title="For Leaders"
-              body="Leadership teaching on culture, equipping teams, and the long work of pastoring well."
-              href="/for-leaders"
-            />
-            <FeatureCard
-              eyebrow="A Training Library"
-              title="Dinner Parties"
-              body="The model at the heart of FOUNT. A complete training library for small groups built around the table."
-              href="/dinner-parties"
-            />
-            <FeatureCard
-              eyebrow="Training & Resources"
-              title="Church Planting"
-              body="Lessons from planting FOUNT in New York, Paris, and Berlin across thirteen years of ministry."
-              href="/church-planting"
-            />
-          </div>
-        </section>
-
-        {/* ABOUT FOUNT BLOCK */}
-        <section className="bg-ink text-paper">
-          <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-10">
-            <div className="md:col-span-5">
-              <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-paper/60 mb-6">
-                About FOUNT Church
-              </p>
-              <h2 className="font-display text-display-lg leading-[1.02]">
-                One church.<br />
-                One city.<br />
-                <span className="italic text-paper/80">One Fount.</span>
-              </h2>
-            </div>
-            <div className="md:col-span-7 font-serif text-lg leading-relaxed text-paper/90">
-              <p>
-                FOUNT Church is a Dinner Party movement in New York City, planted in 2013 by
-                Josh Kelsey and Georgie Kelsey, with church plants now in Paris and Berlin.
-                A decade of ministry, five locations across the boroughs, and thousands of meals
-                shared around tables.
-              </p>
-              <p className="mt-5">
-                We&rsquo;ve built two resources here for leaders. A{" "}
-                <Link href="/dinner-parties" className="underline hover:text-accent transition-colors">
-                  Dinner Party playbook
-                </Link>{" "}
-                for anyone wanting to gather their city around a table, and a{" "}
-                <Link href="/church-planting" className="underline hover:text-accent transition-colors">
-                  Church Planting course
-                </Link>{" "}
-                for pastors building something from the ground up. Come sit down. Come learn how.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="https://fount.nyc"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-paper text-ink rounded-full hover:bg-accent hover:text-paper transition-colors text-sm font-sans"
-                >
-                  Visit fount.nyc <span aria-hidden>→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-        {/* FINAL CTA */}
-        <section className="max-w-content mx-auto px-6 md:px-10 py-24 md:py-32">
-          <div className="max-w-2xl">
-            <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-muted mb-6">Stay in touch</p>
-            <h2 className="font-display text-display-lg leading-[1.05] text-ink mb-6">
-              Subscribe for new writing, sermons, and teaching.
-            </h2>
-            <p className="font-serif text-lg text-ink/80 mb-8">
-              Weekly notes on faith, leadership, and church planting from NYC and beyond.
+        {/* SEO / intro band — keyword-carrying H1 and paragraph, styled in */}
+        <section className="border-b border-line py-[clamp(3.5rem,7vw,6rem)]">
+          <div className="w-full max-w-content mx-auto px-[clamp(1.1rem,4vw,4.5rem)]">
+            <p className="mono mb-6" data-r>
+              Pastor · Teacher · Founder of FOUNT Church NYC
             </p>
-            <div className="bg-soft border border-border rounded-lg p-6 md:p-8 shadow-sm">
-              <iframe
-                src="https://joshuakelsey.substack.com/embed"
-                width="100%"
-                height="200"
-                style={{ border: "none", background: "transparent" }}
-                frameBorder="0"
-                scrolling="no"
-              ></iframe>
+            <h1
+              className="font-disp font-extrabold text-[clamp(2.6rem,9vw,7rem)] leading-[0.9] tracking-[-0.04em]"
+              data-r
+            >
+              Josh <em className="font-serif italic font-normal text-red">Kelsey</em>
+            </h1>
+            <p
+              className="font-serif text-lg md:text-xl leading-relaxed text-ink/90 max-w-[52ch] mt-6"
+              data-r
+            >
+              Founding and lead pastor of{" "}
+              <a href="https://fount.nyc" className="link-underline text-red">
+                FOUNT Church
+              </a>{" "}
+              in New York City, planted in 2013 with my wife and co-pastor{" "}
+              <a href="https://fount.nyc" className="link-underline text-red">
+                Georgie Kelsey
+              </a>
+              . Teaching and writing on ideas, leadership, the city, and a life shaped by
+              Jesus, the true FOUNT.
+            </p>
+          </div>
+        </section>
+
+        {/* BANNER — word cycler */}
+        <section className="banner">
+          <div className="w-full max-w-content mx-auto px-[clamp(1.1rem,4vw,4.5rem)]">
+            <div className="big" data-r>
+              <span>Good ideas arrive</span>
+              <span className="cycler">
+                <span className="cw chroma">slowly.</span>
+                <span className="cw chroma">uninvited.</span>
+                <span className="cw chroma">at the table.</span>
+                <span className="cw chroma">mid&#8209;run.</span>
+              </span>
+            </div>
+            <div className="foot">
+              <span className="mono" data-r>
+                Writing · Dinner Parties · Church Planting
+              </span>
+              <span className="mono" data-r>
+                For Leaders · Running
+              </span>
             </div>
           </div>
         </section>
+
+        {/* INTERACTIVE INDEX */}
+        <section className="index">
+          <div className="w-full max-w-content mx-auto px-[clamp(1.1rem,4vw,4.5rem)]">
+            <IndexRow
+              no="01"
+              href="/writing"
+              title={<em>Writing</em>}
+              desc="Essays on ideas, leadership, and creativity."
+              go="Read →"
+              image="/images/writing.jpg"
+            />
+            <IndexRow
+              no="02"
+              href="/dinner-parties"
+              title={<>Dinner <em>Parties</em></>}
+              desc="A course for gathering people around a table, and multiplying it."
+              go="The method →"
+              image="/images/dinner-parties.jpg"
+            />
+            <IndexRow
+              no="03"
+              href="/church-planting"
+              title={<>Church Planting</>}
+              desc="A training course for building a church from nothing, drawn from three cities over thirteen years."
+              go="The course →"
+              image="/images/church-planting.jpg"
+            />
+            <IndexRow
+              no="04"
+              href="/for-leaders"
+              title={<>For <em>Leaders</em></>}
+              desc="Culture, teams, and how they get built."
+              go="Start here →"
+              image="/images/for-leaders.jpg"
+            />
+          </div>
+        </section>
+
+        {/* RUNNING */}
+        <RunningSection />
+
+        {/* JOLT */}
+        <section className="jolt">
+          <div className="w-full max-w-content mx-auto px-[clamp(1.1rem,4vw,4.5rem)]">
+            <div className="big" data-r>
+              It all still <em>starts</em> at a table.
+            </div>
+            <div className="sub" data-r>
+              The idea underneath everything here
+            </div>
+          </div>
+        </section>
+
+        {/* FEATURED ESSAY — Worry */}
+        <section className="feat">
+          <div className="w-full max-w-content mx-auto px-[clamp(1.1rem,4vw,4.5rem)] grid">
+            <Link href={WORRY_HREF} className="art" data-hover aria-label="Read the essay: Worry Is the Misuse of Your Imagination">
+              <div className="photo" style={{ backgroundImage: "url('/images/worry.jpg')" }} />
+            </Link>
+            <div data-r>
+              <span className="tag">New essay</span>
+              <h2 className="fh">
+                Worry Is the Misuse of Your <em>Imagination</em>
+              </h2>
+              <p>
+                One part of the brain holds your memories, imagines what does not yet exist, and
+                teaches you to be afraid. So worry is not an intruder. It is your highest faculty,
+                aimed the wrong way.
+              </p>
+              <Link href={WORRY_HREF} className="read" data-hover>
+                Read the essay
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CLOSE */}
+        <section className="close">
+          <div
+            className="photo par absolute inset-0 z-0"
+            style={{ backgroundImage: "url('/images/close.jpg')" }}
+            aria-hidden
+          />
+          <div className="veil" aria-hidden />
+          <div className="w-full max-w-content mx-auto px-[clamp(1.1rem,4vw,4.5rem)]">
+            <div className="line" data-r>
+              The work <em>outlasts</em> the worry.
+            </div>
+          </div>
+        </section>
+
+        {/* SUBSCRIBE */}
+        <Subscribe />
       </main>
 
       <Footer />
@@ -182,32 +169,32 @@ export default function HomePage() {
   );
 }
 
-function FeatureCard({
-  eyebrow,
-  title,
-  body,
+function IndexRow({
+  no,
   href,
+  title,
+  desc,
+  go,
+  image,
 }: {
-  eyebrow: string;
-  title: string;
-  body: string;
+  no: string;
   href: string;
+  title: React.ReactNode;
+  desc: string;
+  go: string;
+  image: string;
 }) {
   return (
-    <Link
-      href={href}
-      className="group block border-t border-border pt-8 hover:border-ink transition-colors"
-    >
-      <p className="uppercase text-[10px] tracking-[0.22em] font-sans text-muted mb-4">
-        {eyebrow}
-      </p>
-      <h3 className="font-display text-3xl md:text-4xl leading-tight text-ink mb-4 group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      <p className="font-serif text-ink/75 leading-relaxed">{body}</p>
-      <p className="mt-5 text-sm font-sans text-ink/60 group-hover:text-accent transition-colors">
-        Explore <span aria-hidden>→</span>
-      </p>
+    <Link href={href} className="row" data-hover>
+      <span className="no">{no}</span>
+      <span>
+        <span className="t">{title}</span>
+        <span className="d">{desc}</span>
+      </span>
+      <span className="go">{go}</span>
+      <span className="peek">
+        <span className="photo" style={{ backgroundImage: `url('${image}')` }} />
+      </span>
     </Link>
   );
 }

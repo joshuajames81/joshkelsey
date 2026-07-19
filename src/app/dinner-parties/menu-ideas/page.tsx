@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata: Metadata = {
   title: "Menu Ideas",
@@ -183,6 +184,7 @@ export default function Page() {
           </div>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

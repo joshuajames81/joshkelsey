@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 import ChapterHeader from "@/components/ChapterHeader";
 import ChapterNav from "@/components/ChapterNav";
 import PullQuote from "@/components/PullQuote";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "The Strategy: The Plan, the Timing, and the Core Team",
   description:
     "Your team is you and God. How we built our first plant with no launch team, why Dinner Parties emerged, how to know when to launch, and what to look for when you're building your core.",
-  alternates: { canonical: "https://joshkelsey.com/church-planting/strategy" },
+  alternates: { canonical: "https://joshkelsey.org/church-planting/strategy" },
   openGraph: {
     title: "The Strategy: The Plan, the Timing, and the Core Team | Josh Kelsey",
     description:
@@ -23,15 +24,15 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "The Strategy: The Plan, the Timing, and the Core Team",
-  author: { "@type": "Person", name: "Josh Kelsey", url: "https://joshkelsey.com" },
-  publisher: { "@type": "Person", name: "Josh Kelsey" },
+  author: { "@id": "https://joshkelsey.org/#person" },
+  publisher: { "@id": "https://joshkelsey.org/#person" },
   datePublished: "2026-04-17",
   dateModified: "2026-04-17",
-  mainEntityOfPage: "https://joshkelsey.com/church-planting/strategy",
+  mainEntityOfPage: "https://joshkelsey.org/church-planting/strategy",
   isPartOf: {
     "@type": "CreativeWorkSeries",
     name: "Church Planting Training Library",
-    url: "https://joshkelsey.com/church-planting",
+    url: "https://joshkelsey.org/church-planting",
   },
 };
 
@@ -284,6 +285,7 @@ export default function Page() {
           />
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

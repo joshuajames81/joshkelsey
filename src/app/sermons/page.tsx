@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sermons by Josh Kelsey",
+  title: "Sermons",
   description:
     "Sermons and teaching by Pastor Josh Kelsey from FOUNT Church NYC. Messages on Scripture, the gospel, and life in the city.",
   alternates: { canonical: "https://joshkelsey.org/sermons" },

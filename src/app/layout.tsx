@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Cursor from "@/components/Cursor";
 
 const SITE_URL = "https://joshkelsey.org";
 
@@ -65,9 +66,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "REPLACE_WITH_GOOGLE_VERIFICATION_CODE",
-  },
 };
 
 const personSchema = {
@@ -101,6 +99,7 @@ const personSchema = {
   },
   spouse: {
     "@type": "Person",
+    "@id": `${SITE_URL}/#georgie`,
     name: "Georgie Kelsey",
     url: "https://georgiekelsey.com",
   },
@@ -155,7 +154,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Geist+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
 
@@ -169,6 +168,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-paper text-ink font-serif antialiased">
+        <Cursor />
         {children}
       </body>
     </html>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata: Metadata = {
   title: "Leaders Guide (Free PDF Download)",
@@ -175,6 +176,7 @@ export default function Page() {
           </section>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

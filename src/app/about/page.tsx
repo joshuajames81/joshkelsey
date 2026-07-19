@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata: Metadata = {
-  title: "About Josh Kelsey",
+  title: "About",
   description:
     "Josh Kelsey is the founding and lead pastor of FOUNT Church in New York City, planted in 2013 with his wife and co-pastor Pastor Georgie Kelsey. Thirteen years of pastoring NYC, with church plants in Paris and Berlin.",
   alternates: { canonical: "https://joshkelsey.org/about" },
@@ -44,7 +45,7 @@ export default function AboutPage() {
             <aside className="md:col-span-4 md:sticky md:top-10 md:self-start">
               <figure className="aspect-[4/5] bg-soft border border-border overflow-hidden">
                 <div
-                  className="w-full h-full bg-cover bg-center"
+                  className="photo w-full h-full"
                   style={{ backgroundImage: "url(/josh-kelsey.jpg)" }}
                   aria-label="Pastor Josh Kelsey"
                 />
@@ -125,6 +126,47 @@ export default function AboutPage() {
               </p>
 
               <h2 className="font-display text-3xl text-ink mt-14 mb-2 leading-tight">
+                A note from Josh
+              </h2>
+              <p>
+                For over thirteen years, I&rsquo;ve had the privilege of pastoring in New York City,
+                a city I love with everything in me. My wife Georgie and I planted{" "}
+                <a href="https://fount.nyc" className="link-underline text-accent">FOUNT Church</a>{" "}
+                in 2013, believing that Jesus could be met around a table and that the gospel could
+                shape a city through people who love Him and love each other. That work is not
+                finished. It may never be.
+              </p>
+              <p>
+                God gave Georgie and I our church&rsquo;s name through the hymn{" "}
+                <em>Come Thou Fount of Every Blessing</em>. Our conviction is this.{" "}
+                <strong className="font-semibold">Jesus is the Fount.</strong>{" "}
+                And out of Him, the church becomes a fount to the city. Every song, every sermon,
+                every Dinner Party, every Sunday, exists for that.
+              </p>
+              <p>
+                This site is where I share teaching, writing, sermons, and conversations on the gospel,
+                the city, and what it means to live a life genuinely shaped by Jesus. Thanks for being here.
+              </p>
+
+              <h2 className="font-display text-3xl text-ink mt-14 mb-2 leading-tight">
+                One church, one city, one Fount
+              </h2>
+              <p>
+                FOUNT Church is a Dinner Party movement in New York City, planted in 2013 by
+                Josh Kelsey and Georgie Kelsey, with church plants now in Paris and Berlin.
+                A decade of ministry, five locations across the boroughs, and thousands of meals
+                shared around tables.
+              </p>
+              <p>
+                We&rsquo;ve built two resources here for leaders. A{" "}
+                <a href="/dinner-parties" className="link-underline text-accent">Dinner Party playbook</a>{" "}
+                for anyone wanting to gather their city around a table, and a{" "}
+                <a href="/church-planting" className="link-underline text-accent">Church Planting course</a>{" "}
+                for pastors building something from the ground up. Come sit down. Come learn how.{" "}
+                <a href="https://fount.nyc" className="link-underline text-accent">Visit fount.nyc &rarr;</a>
+              </p>
+
+              <h2 className="font-display text-3xl text-ink mt-14 mb-2 leading-tight">
                 Get in touch
               </h2>
               <p>
@@ -139,6 +181,7 @@ export default function AboutPage() {
           </div>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

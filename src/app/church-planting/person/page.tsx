@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 import ChapterHeader from "@/components/ChapterHeader";
 import ChapterNav from "@/components/ChapterNav";
 import PullQuote from "@/components/PullQuote";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "The Person: The Planter Before the Plant",
   description:
     "The interior work every church planter has to do first. Your why, your heart, your marriage, the revelation behind your calling, your vision statement, and the city God has placed in you.",
-  alternates: { canonical: "https://joshkelsey.com/church-planting/person" },
+  alternates: { canonical: "https://joshkelsey.org/church-planting/person" },
   openGraph: {
     title: "The Person: The Planter Before the Plant | Josh Kelsey",
     description:
@@ -23,15 +24,15 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "The Person: The Planter Before the Plant",
-  author: { "@type": "Person", name: "Josh Kelsey", url: "https://joshkelsey.com" },
-  publisher: { "@type": "Person", name: "Josh Kelsey" },
+  author: { "@id": "https://joshkelsey.org/#person" },
+  publisher: { "@id": "https://joshkelsey.org/#person" },
   datePublished: "2026-04-17",
   dateModified: "2026-04-17",
-  mainEntityOfPage: "https://joshkelsey.com/church-planting/person",
+  mainEntityOfPage: "https://joshkelsey.org/church-planting/person",
   isPartOf: {
     "@type": "CreativeWorkSeries",
     name: "Church Planting Training Library",
-    url: "https://joshkelsey.com/church-planting",
+    url: "https://joshkelsey.org/church-planting",
   },
 };
 
@@ -345,6 +346,7 @@ export default function Page() {
           />
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

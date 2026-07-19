@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata: Metadata = {
   title: "On preaching the whole text",
@@ -169,6 +170,7 @@ export default function Post() {
           </footer>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 import Nav from "@/components/Nav";
 import ChapterNav from "@/components/ChapterNav";
 
 export const metadata: Metadata = {
-  title: "Week 1: Building Real Community · Leadership Training · Josh Kelsey",
+  title: "Week 1: Building Real Community · Leadership Training",
   description: "The 5 stages of community development. Moving from pseudo community through chaos and emptying to build something real and lasting.",
   alternates: { canonical: "https://joshkelsey.org/for-leaders/week-1" },
 };
@@ -230,6 +231,7 @@ export default function Week1Page() {
 
         <ChapterNav previous={navigation.previous} next={navigation.next} />
       </main>
+      <Subscribe />
       <Footer />
     </>
   );

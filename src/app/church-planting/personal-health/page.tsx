@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 import ChapterHeader from "@/components/ChapterHeader";
 import ChapterNav from "@/components/ChapterNav";
 import PullQuote from "@/components/PullQuote";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "Personal Health: The Individual Leader, Personal Devotion, Support",
   description:
     "The private life of the planter is the ceiling of the plant. What has to be non-negotiable in your own walk with God, and who you cannot do this without.",
-  alternates: { canonical: "https://joshkelsey.com/church-planting/personal-health" },
+  alternates: { canonical: "https://joshkelsey.org/church-planting/personal-health" },
   openGraph: {
     title: "Personal Health | Josh Kelsey",
     description:
@@ -23,15 +24,15 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Personal Health: The Individual Leader, Personal Devotion, Support",
-  author: { "@type": "Person", name: "Josh Kelsey", url: "https://joshkelsey.com" },
-  publisher: { "@type": "Person", name: "Josh Kelsey" },
+  author: { "@id": "https://joshkelsey.org/#person" },
+  publisher: { "@id": "https://joshkelsey.org/#person" },
   datePublished: "2026-04-17",
   dateModified: "2026-04-17",
-  mainEntityOfPage: "https://joshkelsey.com/church-planting/personal-health",
+  mainEntityOfPage: "https://joshkelsey.org/church-planting/personal-health",
   isPartOf: {
     "@type": "CreativeWorkSeries",
     name: "Church Planting Training Library",
-    url: "https://joshkelsey.com/church-planting",
+    url: "https://joshkelsey.org/church-planting",
   },
 };
 
@@ -254,6 +255,7 @@ export default function Page() {
           />
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

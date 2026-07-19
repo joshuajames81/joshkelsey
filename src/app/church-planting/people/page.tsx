@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 import ChapterHeader from "@/components/ChapterHeader";
 import ChapterNav from "@/components/ChapterNav";
 import PullQuote from "@/components/PullQuote";
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   title: "The People: Pastoring, Assimilation, Retention, and Raising Leaders",
   description:
     "Your church is the people. How we pastor through one-on-ones, how we track new sign-ups and retention, and how empowering and releasing ties back to the Dinner Party engine.",
-  alternates: { canonical: "https://joshkelsey.com/church-planting/people" },
+  alternates: { canonical: "https://joshkelsey.org/church-planting/people" },
   openGraph: {
     title: "The People | Josh Kelsey",
     description:
@@ -24,15 +25,15 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "The People: Pastoring, Assimilation, Retention, and Raising Leaders",
-  author: { "@type": "Person", name: "Josh Kelsey", url: "https://joshkelsey.com" },
-  publisher: { "@type": "Person", name: "Josh Kelsey" },
+  author: { "@id": "https://joshkelsey.org/#person" },
+  publisher: { "@id": "https://joshkelsey.org/#person" },
   datePublished: "2026-04-17",
   dateModified: "2026-04-17",
-  mainEntityOfPage: "https://joshkelsey.com/church-planting/people",
+  mainEntityOfPage: "https://joshkelsey.org/church-planting/people",
   isPartOf: {
     "@type": "CreativeWorkSeries",
     name: "Church Planting Training Library",
-    url: "https://joshkelsey.com/church-planting",
+    url: "https://joshkelsey.org/church-planting",
   },
 };
 
@@ -332,6 +333,7 @@ export default function Page() {
           />
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );
