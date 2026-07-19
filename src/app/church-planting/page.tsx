@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Church Planting Training Library · Josh Kelsey",
+  title: "Church Planting Training Library",
   description:
     "Thirteen years, three cities, one conviction. Resources for pastors and leaders called to plant churches in the places everyone else has written off.",
   alternates: { canonical: "https://joshkelsey.org/church-planting" },
@@ -89,7 +89,7 @@ const partThree: Chapter[] = [
 export default function ChurchPlantingPage() {
   return (
     <>
-      <Nav />
+      <Nav variant="solid" />
       <main>
         {/* HERO */}
         <section className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-28">

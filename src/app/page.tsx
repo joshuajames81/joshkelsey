@@ -1,213 +1,94 @@
-import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
+import HomeHero from "@/components/home/HomeHero";
+import Statement from "@/components/home/Statement";
+import TorchWork from "@/components/home/TorchWork";
+import RunningSection from "@/components/home/RunningSection";
+import WritingFeed from "@/components/home/WritingFeed";
+import CloseCut from "@/components/home/CloseCut";
+import { graphJson, webPageNode } from "@/lib/schema";
+
+const homeSchema = graphJson([
+  webPageNode(
+    "/",
+    "Josh Kelsey | Pastor, Teacher & Founder of FOUNT Church NYC",
+    "Josh Kelsey is the founding and lead pastor of FOUNT Church in New York City, planted in 2013 with his wife and co-pastor Georgie Kelsey."
+  ),
+]);
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col paper-grain selection-accent">
-      <Nav />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: homeSchema }} />
+      <Nav variant="hero" />
 
-      <main className="flex-1">
-        {/* HERO */}
-        <section className="relative overflow-hidden">
-          <div className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36">
-            <div className="grid md:grid-cols-12 gap-10 items-end">
-              <div className="md:col-span-9 reveal">
-                <p className="uppercase text-[11px] md:text-xs tracking-[0.22em] text-accent font-sans mb-6 md:mb-8">
-                  Pastor · Teacher · Founder of FOUNT Church NYC
-                </p>
-                <h1 className="font-display text-display-xl font-medium text-ink">
-                  Josh
-                  <span className="italic text-accent"> Kelsey</span>
-                </h1>
-                <p className="mt-8 md:mt-10 max-w-prose font-serif text-lg md:text-xl leading-relaxed text-ink/90">
-                  Founding and lead pastor of{" "}
-                  <a href="https://fount.nyc" className="link-underline text-accent">
-                    FOUNT Church
-                  </a>{" "}
-                  in New York City, planted in 2013 with my wife and co-pastor{" "}
-                  <a href="https://fount.nyc" className="link-underline text-accent">
-                    Georgie Kelsey
-                  </a>
-                  . Teaching and writing on the gospel, the city, and a life shaped by Jesus,
-                  the true FOUNT.
-                </p>
-              </div>
+      <main>
+        <HomeHero image="/site-images/home-hero.jpg" />
 
-              <div className="md:col-span-3 md:pl-6 reveal" style={{ animationDelay: "0.2s" }}>
-                <figure className="aspect-[3/4] w-full bg-soft border border-border rounded-sm overflow-hidden relative">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url(/josh-kelsey.jpg)" }}
-                    aria-hidden
-                  />
-                  <figcaption className="sr-only">Josh Kelsey, lead pastor of FOUNT Church NYC</figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* INTRO PARAGRAPH */}
-        <section className="border-y border-border/60 bg-soft/40">
-          <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
-            <div className="rule text-[11px] uppercase tracking-[0.22em] font-sans mb-12">
-              A Note From Josh
-            </div>
-            <article className="max-w-prose mx-auto font-serif text-lg md:text-xl leading-[1.7] text-ink/90 reveal">
-              <p className="drop-cap">
-                For over thirteen years, I&rsquo;ve had the privilege of pastoring in New York City,
-                a city I love with everything in me. My wife Georgie and I planted{" "}
-                <a href="https://fount.nyc" className="link-underline">FOUNT Church</a>{" "}
-                in 2013, believing that Jesus could be met around a table and that the gospel could
-                shape a city through people who love Him and love each other. That work is not
-                finished. It may never be.
-              </p>
-              <p className="mt-6">
-                God gave Georgie and I our church&rsquo;s name through the hymn{" "}
-                <em>Come Thou Fount of Every Blessing</em>. Our conviction is this.{" "}
-                <strong className="font-semibold">Jesus is the Fount.</strong>{" "}
-                And out of Him, the church becomes a fount to the city. Every song, every sermon,
-                every Dinner Party, every Sunday, exists for that.
-              </p>
-              <p className="mt-6">
-                This site is where I share teaching, writing, sermons, and conversations on the gospel,
-                the city, and what it means to live a life genuinely shaped by Jesus. Thanks for being here.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        {/* FEATURE GRID */}
-        <section className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28">
-          <div className="rule text-[11px] uppercase tracking-[0.22em] font-sans mb-12">Where to begin</div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-            <FeatureCard
-              eyebrow="Essays & Reflections"
-              title="Writing"
-              body="Longer pieces on theology, pastoral life, New York, marriage, and what I&rsquo;m learning."
-              href="/writing"
-            />
-            <FeatureCard
-              eyebrow="Culture & Equipping"
-              title="For Leaders"
-              body="Leadership teaching on culture, equipping teams, and the long work of pastoring well."
-              href="/for-leaders"
-            />
-            <FeatureCard
-              eyebrow="A Training Library"
-              title="Dinner Parties"
-              body="The model at the heart of FOUNT. A complete training library for small groups built around the table."
-              href="/dinner-parties"
-            />
-            <FeatureCard
-              eyebrow="Training & Resources"
-              title="Church Planting"
-              body="Lessons from planting FOUNT in New York, Paris, and Berlin across thirteen years of ministry."
-              href="/church-planting"
-            />
-          </div>
-        </section>
-
-        {/* ABOUT FOUNT BLOCK */}
-        <section className="bg-ink text-paper">
-          <div className="max-w-content mx-auto px-6 md:px-10 py-20 md:py-28 grid md:grid-cols-12 gap-10">
-            <div className="md:col-span-5">
-              <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-paper/60 mb-6">
-                About FOUNT Church
-              </p>
-              <h2 className="font-display text-display-lg leading-[1.02]">
-                One church.<br />
-                One city.<br />
-                <span className="italic text-paper/80">One Fount.</span>
-              </h2>
-            </div>
-            <div className="md:col-span-7 font-serif text-lg leading-relaxed text-paper/90">
-              <p>
-                FOUNT Church is a Dinner Party movement in New York City, planted in 2013 by
-                Josh Kelsey and Georgie Kelsey, with church plants now in Paris and Berlin.
-                A decade of ministry, five locations across the boroughs, and thousands of meals
-                shared around tables.
-              </p>
-              <p className="mt-5">
-                We&rsquo;ve built two resources here for leaders. A{" "}
-                <Link href="/dinner-parties" className="underline hover:text-accent transition-colors">
-                  Dinner Party playbook
-                </Link>{" "}
-                for anyone wanting to gather their city around a table, and a{" "}
-                <Link href="/church-planting" className="underline hover:text-accent transition-colors">
-                  Church Planting course
-                </Link>{" "}
-                for pastors building something from the ground up. Come sit down. Come learn how.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a
-                  href="https://fount.nyc"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-paper text-ink rounded-full hover:bg-accent hover:text-paper transition-colors text-sm font-sans"
-                >
-                  Visit fount.nyc <span aria-hidden>→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-        {/* FINAL CTA */}
-        <section className="max-w-content mx-auto px-6 md:px-10 py-24 md:py-32">
-          <div className="max-w-2xl">
-            <p className="uppercase text-[11px] tracking-[0.22em] font-sans text-muted mb-6">Stay in touch</p>
-            <h2 className="font-display text-display-lg leading-[1.05] text-ink mb-6">
-              Subscribe for new writing, sermons, and teaching.
-            </h2>
-            <p className="font-serif text-lg text-ink/80 mb-8">
-              Weekly notes on faith, leadership, and church planting from NYC and beyond.
+        {/* Masthead / SEO band: visible H1 + keyword paragraph, styled in */}
+        <section className="stmt" style={{ paddingTop: "clamp(4rem,10vw,8rem)", paddingBottom: 0 }}>
+          <div className="wrap">
+            <p className="mono" data-r style={{ marginBottom: "1.4rem" }}>
+              Pastor · Teacher · Founder of FOUNT Church NYC
             </p>
-            <div className="bg-soft border border-border rounded-lg p-6 md:p-8 shadow-sm">
-              <iframe
-                src="https://joshuakelsey.substack.com/embed"
-                width="100%"
-                height="200"
-                style={{ border: "none", background: "transparent" }}
-                frameBorder="0"
-                scrolling="no"
-              ></iframe>
-            </div>
+            <h1
+              className="font-disp"
+              data-r
+              style={{
+                fontWeight: 900,
+                fontSize: "clamp(3rem,11vw,10rem)",
+                lineHeight: 0.9,
+                letterSpacing: "-0.045em",
+              }}
+            >
+              Josh <em className="font-serif flare" style={{ fontStyle: "italic", fontWeight: 400 }}>Kelsey</em>
+            </h1>
+            <p
+              className="font-serif"
+              data-r
+              style={{
+                marginTop: "1.6rem",
+                maxWidth: "52ch",
+                fontSize: "1.3rem",
+                lineHeight: 1.5,
+                color: "rgba(241,239,230,0.82)",
+              }}
+            >
+              Founding and lead pastor of{" "}
+              <a href="https://fount.nyc" className="link-underline flare">FOUNT Church</a>{" "}
+              in New York City, planted in 2013 with my wife and co-pastor{" "}
+              <a href="https://fount.nyc" className="link-underline flare">Georgie Kelsey</a>. Teaching and
+              writing on ideas, leadership, the city, and a life shaped by Jesus, the true FOUNT.
+            </p>
           </div>
         </section>
+
+        <Statement />
+
+        <div className="mq">
+          <div className="mqt">
+            <b>Writing</b><span className="d">/</span><b>Dinner Parties</b><span className="d">/</span>
+            <b>Church Planting</b><span className="d">/</span><b>For Leaders</b><span className="d">/</span>
+            <b>Running</b><span className="d">/</span>
+            <b>Writing</b><span className="d">/</span><b>Dinner Parties</b><span className="d">/</span>
+            <b>Church Planting</b><span className="d">/</span><b>For Leaders</b><span className="d">/</span>
+            <b>Running</b><span className="d">/</span>
+          </div>
+        </div>
+
+        <TorchWork />
+
+        <RunningSection />
+
+        <WritingFeed />
+
+        <Subscribe />
+
+        <CloseCut image="/site-images/close-chair.jpg" />
       </main>
 
       <Footer />
-    </div>
-  );
-}
-
-function FeatureCard({
-  eyebrow,
-  title,
-  body,
-  href,
-}: {
-  eyebrow: string;
-  title: string;
-  body: string;
-  href: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group block border-t border-border pt-8 hover:border-ink transition-colors"
-    >
-      <p className="uppercase text-[10px] tracking-[0.22em] font-sans text-muted mb-4">
-        {eyebrow}
-      </p>
-      <h3 className="font-display text-3xl md:text-4xl leading-tight text-ink mb-4 group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      <p className="font-serif text-ink/75 leading-relaxed">{body}</p>
-      <p className="mt-5 text-sm font-sans text-ink/60 group-hover:text-accent transition-colors">
-        Explore <span aria-hidden>→</span>
-      </p>
-    </Link>
+    </>
   );
 }

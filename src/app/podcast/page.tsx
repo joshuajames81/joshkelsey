@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PodcastPage() {
   return (
     <div className="min-h-screen flex flex-col paper-grain">
-      <Nav />
+      <Nav variant="solid" />
       <main className="flex-1">
         <section className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-20">
           <p className="uppercase text-[11px] tracking-[0.22em] text-accent font-sans mb-6">Conversations & Teaching</p>

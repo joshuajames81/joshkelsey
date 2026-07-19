@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata: Metadata = {
   title: "The First and the Last",
@@ -33,7 +34,7 @@ export default function Post() {
   return (
     <div className="min-h-screen flex flex-col paper-grain">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <Nav />
+      <Nav variant="solid" />
       <main className="flex-1">
         <article className="max-w-prose mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24">
           <header className="mb-12 md:mb-16">
@@ -331,6 +332,7 @@ export default function Post() {
           </div>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

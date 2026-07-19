@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata: Metadata = {
   title: "Menu Ideas",
@@ -102,7 +103,7 @@ const menus = [
 export default function Page() {
   return (
     <div className="min-h-screen flex flex-col paper-grain">
-      <Nav />
+      <Nav variant="solid" />
       <main className="flex-1">
         <article className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24">
           <header className="mb-14 md:mb-20 max-w-3xl">
@@ -183,6 +184,7 @@ export default function Page() {
           </div>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

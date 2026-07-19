@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 import ChapterHeader from "@/components/ChapterHeader";
 import ChapterNav from "@/components/ChapterNav";
 import PullQuote from "@/components/PullQuote";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "The Trials: Comparison, Balance, Temptation, People Leaving",
   description:
     "The interior costs of planting that no one tells you about. How to fight comparison, how to live a balanced life, how to handle temptation, and what to do when people leave.",
-  alternates: { canonical: "https://joshkelsey.com/church-planting/trials" },
+  alternates: { canonical: "https://joshkelsey.org/church-planting/trials" },
   openGraph: {
     title: "The Trials | Josh Kelsey",
     description:
@@ -23,15 +24,15 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "The Trials: Comparison, Balance, Temptation, People Leaving",
-  author: { "@type": "Person", name: "Josh Kelsey", url: "https://joshkelsey.com" },
-  publisher: { "@type": "Person", name: "Josh Kelsey" },
+  author: { "@id": "https://joshkelsey.org/#person" },
+  publisher: { "@id": "https://joshkelsey.org/#person" },
   datePublished: "2026-04-17",
   dateModified: "2026-04-17",
-  mainEntityOfPage: "https://joshkelsey.com/church-planting/trials",
+  mainEntityOfPage: "https://joshkelsey.org/church-planting/trials",
   isPartOf: {
     "@type": "CreativeWorkSeries",
     name: "Church Planting Training Library",
-    url: "https://joshkelsey.com/church-planting",
+    url: "https://joshkelsey.org/church-planting",
   },
 };
 
@@ -42,7 +43,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <Nav />
+      <Nav variant="solid" />
       <main className="flex-1">
         <article className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24">
           <ChapterHeader
@@ -336,6 +337,7 @@ export default function Page() {
           />
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

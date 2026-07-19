@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 import Nav from "@/components/Nav";
 import ChapterNav from "@/components/ChapterNav";
 
 export const metadata: Metadata = {
-  title: "Week 2: Effective Teams · Leadership Training · Josh Kelsey",
+  title: "Week 2: Effective Teams · Leadership Training",
   description: "The six fundamentals that make teams work. From clarity of vision to open communication, the conditions that sustain what God builds.",
   alternates: { canonical: "https://joshkelsey.org/for-leaders/week-2" },
 };
@@ -17,7 +18,7 @@ const navigation = {
 export default function Week2Page() {
   return (
     <>
-      <Nav />
+      <Nav variant="solid" />
       <main className="bg-paper">
         {/* HEADER */}
         <section className="max-w-content mx-auto px-6 md:px-10 py-16 md:py-20">
@@ -251,6 +252,7 @@ export default function Week2Page() {
 
         <ChapterNav previous={navigation.previous} next={navigation.next} />
       </main>
+      <Subscribe />
       <Footer />
     </>
   );

@@ -1,64 +1,67 @@
 import Link from "next/link";
 
-export default function Nav() {
+const LINKS = [
+  { href: "/writing", label: "Writing" },
+  { href: "/dinner-parties", label: "Dinner Parties" },
+  { href: "/church-planting", label: "Church Planting" },
+  { href: "/for-leaders", label: "For Leaders" },
+  { href: "/running", label: "Running" },
+  { href: "/about", label: "About" },
+];
+
+/**
+ * Fixed velocity header. `variant="hero"` (default) staggers in after the
+ * intro and sits over the hero scrim; `variant="solid"` is the dark, always-on
+ * header for inner pages. Decode-on-hover and cursor-scale are wired globally
+ * via [data-dec] / [data-h] in Cursor.
+ */
+export default function Nav({ variant = "hero" }: { variant?: "hero" | "solid" }) {
+  const solid = variant === "solid";
   return (
-    <header className="relative z-40 border-b border-border/60">
-      <div className="max-w-content mx-auto px-6 md:px-10 py-5 flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-display text-xl md:text-2xl tracking-tight leading-none"
-          aria-label="Josh Kelsey, home"
-        >
-          <span className="block text-ink">Josh Kelsey</span>
-          <span className="block text-[11px] md:text-xs uppercase tracking-[0.18em] text-muted mt-0.5 font-sans">
-            Pastor · FOUNT Church NYC
-          </span>
+    <>
+      <div className="topscrim" aria-hidden />
+      <header className={`top${solid ? " solid" : ""}`}>
+        <Link href="/" className="brand" data-h aria-label="Josh Kelsey, home">
+          Josh Kelsey<i>.</i>
         </Link>
-
-        <nav aria-label="Primary" className="hidden lg:flex items-center gap-6 text-sm font-sans">
-          <Link href="/about" className="link-underline">About</Link>
-          <Link href="/writing" className="link-underline">Writing</Link>
-          <Link href="/sermons" className="link-underline">Sermons</Link>
-          <Link href="/dinner-parties" className="link-underline">Dinner Parties</Link>
-          <Link href="/church-planting" className="link-underline">Church Planting</Link>
-          <Link href="/for-leaders" className="link-underline">For Leaders</Link>
-          <Link href="/podcast" className="link-underline">Podcast</Link>
-          <Link href="/contact" className="link-underline">Contact</Link>
-          <a
-            href="https://fount.nyc"
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center gap-1.5 px-4 py-2 bg-ink text-paper rounded-full hover:bg-accent transition-colors"
-          >
-            FOUNT
-            <span aria-hidden>→</span>
-          </a>
+        <nav aria-label="Primary">
+          {LINKS.map((l) => (
+            <Link key={l.href} href={l.href} data-h data-dec>
+              {l.label}
+            </Link>
+          ))}
         </nav>
-
-        {/* Mobile menu */}
-        <details className="lg:hidden relative">
-          <summary className="list-none cursor-pointer p-2" aria-label="Open menu">
-            <span className="block w-6 h-[1.5px] bg-ink mb-1.5" />
-            <span className="block w-6 h-[1.5px] bg-ink mb-1.5" />
-            <span className="block w-4 h-[1.5px] bg-ink ml-auto" />
+        <details className="burger-wrap">
+          <summary className="burger" data-h style={{ listStyle: "none", cursor: "pointer" }}>
+            Menu
           </summary>
-          <div className="absolute right-0 top-full mt-2 bg-paper border border-border rounded-lg p-6 min-w-[240px] shadow-xl shadow-ink/5 z-50">
-            <nav className="flex flex-col gap-4 text-base font-sans">
-              <Link href="/about">About</Link>
-              <Link href="/writing">Writing</Link>
-              <Link href="/sermons">Sermons</Link>
-              <Link href="/dinner-parties">Dinner Parties</Link>
-              <Link href="/church-planting">Church Planting</Link>
-              <Link href="/for-leaders">For Leaders</Link>
-              <Link href="/podcast">Podcast</Link>
-              <Link href="/contact">Contact</Link>
-              <a href="https://fount.nyc" target="_blank" rel="noopener" className="text-accent">
-                FOUNT Church →
-              </a>
+          <div
+            style={{
+              position: "absolute",
+              right: 0,
+              top: "100%",
+              marginTop: "0.75rem",
+              background: "var(--deep)",
+              border: "1px solid var(--line)",
+              padding: "1.25rem 1.5rem",
+              minWidth: "220px",
+              zIndex: 50,
+            }}
+          >
+            <nav className="flex flex-col gap-3">
+              {LINKS.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="font-mono text-xs uppercase tracking-[0.12em] text-fg hover:text-flare"
+                >
+                  {l.label}
+                </Link>
+              ))}
             </nav>
           </div>
         </details>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }

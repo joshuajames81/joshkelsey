@@ -1,8 +1,9 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata = {
-  title: "Josh Kelsey on the Dinner Party Church | Featured in Eternity News",
+  title: { absolute: "Josh Kelsey on the Dinner Party Church | Eternity News" },
   description: "Josh Kelsey, founding pastor of FOUNT Church NYC, shares the Dinner Party church vision in Eternity News. Planted alongside Georgie Kelsey in Brooklyn, 2013.",
   alternates: {
     canonical: "https://joshkelsey.org/press/eternity-news-dinner-party-church",
@@ -22,27 +23,7 @@ const schema = {
   url: "https://joshkelsey.org/press/eternity-news-dinner-party-church",
   name: "Josh Kelsey on the Dinner Party Church | Featured in Eternity News",
   description: "Josh Kelsey, founding pastor of FOUNT Church NYC, shares the Dinner Party church vision in Eternity News.",
-  mainEntity: {
-    "@type": "Person",
-    name: "Josh Kelsey",
-    alternateName: "Joshua Kelsey",
-    jobTitle: "Founding Pastor",
-    worksFor: {
-      "@type": "Organization",
-      name: "FOUNT Church",
-      url: "https://fount.nyc",
-    },
-    spouse: {
-      "@type": "Person",
-      name: "Georgie Kelsey",
-    },
-    sameAs: [
-      "https://www.linkedin.com/in/josh--kelsey/",
-      "https://joshkelsey.substack.com",
-      "https://fount.nyc",
-      "https://www.instagram.com/jkelsey/",
-    ],
-  },
+  mainEntity: { "@id": "https://joshkelsey.org/#person" },
   about: {
     "@type": "NewsArticle",
     headline: "C3 Church knows the power of dinner parties",
@@ -73,7 +54,7 @@ export default function EternityNewsPressPage() {
   return (
     <div className="min-h-screen flex flex-col paper-grain">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Nav />
+      <Nav variant="solid" />
       <main className="flex-1">
         <article className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24">
           <header className="mb-12 max-w-3xl">
@@ -117,6 +98,7 @@ export default function EternityNewsPressPage() {
           </div>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );

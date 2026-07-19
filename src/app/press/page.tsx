@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Press & Media",
   description: "Selected press, interviews, and features on Josh Kelsey, Georgie Kelsey, and FOUNT Church NYC.",
+  alternates: { canonical: "https://joshkelsey.org/press" },
 };
 
 type PressItem = {
@@ -89,7 +90,7 @@ const profiles: PressItem[] = [
 export default function PressPage() {
   return (
     <div className="min-h-screen flex flex-col paper-grain">
-      <Nav />
+      <Nav variant="solid" />
       <main className="flex-1">
         <div className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24">
           <header className="mb-16 max-w-3xl">

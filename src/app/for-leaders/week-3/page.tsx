@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 import Nav from "@/components/Nav";
 import ChapterNav from "@/components/ChapterNav";
 
 export const metadata: Metadata = {
-  title: "Week 3: Raising Leaders · Leadership Training · Josh Kelsey",
+  title: "Week 3: Raising Leaders · Leadership Training",
   description: "Teaching your team to fish. The four stages of development and how to multiply leaders who multiply leaders.",
   alternates: { canonical: "https://joshkelsey.org/for-leaders/week-3" },
 };
@@ -17,7 +18,7 @@ const navigation = {
 export default function Week3Page() {
   return (
     <>
-      <Nav />
+      <Nav variant="solid" />
       <main className="bg-paper">
         {/* HEADER */}
         <section className="max-w-content mx-auto px-6 md:px-10 py-16 md:py-20">
@@ -303,6 +304,7 @@ export default function Week3Page() {
 
         <ChapterNav previous={navigation.previous} next={navigation.next} />
       </main>
+      <Subscribe />
       <Footer />
     </>
   );

@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Stay in Touch · Josh Kelsey",
+  title: "Stay in Touch",
   description:
     "Read Josh Kelsey on Substack. Writing, teaching, and reflections on faith, leadership, and church planting from the founding pastor of FOUNT Church NYC.",
   alternates: { canonical: "https://joshkelsey.org/contact" },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col paper-grain">
-      <Nav />
+      <Nav variant="solid" />
       <main className="flex-1">
         <article className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24">
           <header className="mb-16 md:mb-20 max-w-3xl">

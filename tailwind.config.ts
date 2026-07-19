@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
@@ -9,29 +10,47 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "#F5F1E8",
-        ink: "#1A2541",
-        accent: "#8B2E1E",
-        muted: "#6B6456",
-        soft: "#EDE6D3",
-        border: "#D4CAB5",
+        // Velocity palette: dark canvas, one electric-lime accent.
+        // Legacy token names are re-aliased so existing pages reskin dark
+        // automatically: accent -> flare, paper -> bg, ink -> fg,
+        // border -> line, soft -> panel, muted -> dim.
+        bg: "#090a08",
+        deep: "#050603",
+        fg: "#f1efe6",
+        flare: "#c9ff2e",
+        ice: "#9fb4c9",
+        amber: "#f0a52a",
+        dim: "#8a857a",
+        line: "rgba(234,231,223,0.14)",
+        accent: "#c9ff2e", // legacy -> flare
+        paper: "#090a08", // legacy -> bg
+        ink: "#f1efe6", // legacy -> fg
+        soft: "#111310", // legacy -> panel
+        border: "rgba(234,231,223,0.14)", // legacy -> line
+        muted: "#8a857a", // legacy -> dim
       },
       fontFamily: {
-        display: ['"Cormorant Garamond"', "Georgia", "serif"],
-        serif: ['"Source Serif 4"', "Georgia", "serif"],
-        sans: ['"Geist"', "-apple-system", "sans-serif"],
+        disp: ['"Archivo"', "system-ui", "sans-serif"],
+        display: ['"Archivo"', "system-ui", "sans-serif"],
+        serif: ['"Instrument Serif"', "Georgia", "serif"],
+        mono: ['"Space Mono"', "ui-monospace", "monospace"],
+        sans: ['"Space Mono"', "ui-monospace", "monospace"],
       },
       fontSize: {
-        "display-xl": ["clamp(3rem, 8vw, 7rem)", { lineHeight: "0.95", letterSpacing: "-0.02em" }],
-        "display-lg": ["clamp(2.25rem, 5vw, 4rem)", { lineHeight: "1.05", letterSpacing: "-0.015em" }],
-        "display-md": ["clamp(1.75rem, 3vw, 2.5rem)", { lineHeight: "1.15", letterSpacing: "-0.01em" }],
+        "display-2xl": ["clamp(3.5rem, 15vw, 15rem)", { lineHeight: "0.82", letterSpacing: "-0.05em" }],
+        "display-xl": ["clamp(3rem, 11vw, 11rem)", { lineHeight: "0.9", letterSpacing: "-0.045em" }],
+        "display-lg": ["clamp(2.2rem, 6vw, 5rem)", { lineHeight: "0.95", letterSpacing: "-0.035em" }],
+        "display-md": ["clamp(1.75rem, 3vw, 2.6rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
       },
       maxWidth: {
-        prose: "38rem",
-        content: "72rem",
+        prose: "40rem",
+        content: "1560px",
+      },
+      transitionTimingFunction: {
+        e1: "cubic-bezier(0.16, 1, 0.3, 1)",
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };
 export default config;

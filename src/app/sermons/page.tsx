@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sermons by Josh Kelsey",
+  title: "Sermons",
   description:
     "Sermons and teaching by Pastor Josh Kelsey from FOUNT Church NYC. Messages on Scripture, the gospel, and life in the city.",
   alternates: { canonical: "https://joshkelsey.org/sermons" },
@@ -58,7 +58,7 @@ const featured = [
 export default function SermonsPage() {
   return (
     <div className="min-h-screen flex flex-col paper-grain">
-      <Nav />
+      <Nav variant="solid" />
       <main className="flex-1">
         <section className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-12">
           <p className="uppercase text-[11px] tracking-[0.22em] text-accent font-sans mb-6">Teaching</p>

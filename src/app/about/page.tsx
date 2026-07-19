@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Subscribe from "@/components/Subscribe";
 
 export const metadata: Metadata = {
-  title: "About Josh Kelsey",
+  title: "About",
   description:
     "Josh Kelsey is the founding and lead pastor of FOUNT Church in New York City, planted in 2013 with his wife and co-pastor Pastor Georgie Kelsey. Thirteen years of pastoring NYC, with church plants in Paris and Berlin.",
   alternates: { canonical: "https://joshkelsey.org/about" },
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col paper-grain">
-      <Nav />
+      <Nav variant="solid" />
       <main className="flex-1">
         <article className="max-w-content mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-24">
           <header className="mb-16 md:mb-24 max-w-3xl">
@@ -139,6 +140,7 @@ export default function AboutPage() {
           </div>
         </article>
       </main>
+      <Subscribe />
       <Footer />
     </div>
   );
